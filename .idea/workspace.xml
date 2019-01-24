@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be44294f-1a27-4a43-aa13-e49cf82db611" name="Default Changelist" comment="" />
+    <list default="true" id="be44294f-1a27-4a43-aa13-e49cf82db611" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Accounts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="307">
+              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -105,6 +109,7 @@
         <option value="$PROJECT_DIR$/YarnMMS/settings.py" />
         <option value="$PROJECT_DIR$/Accounts/views.py" />
         <option value="$PROJECT_DIR$/Accounts/admin.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Accounts/models.py" />
       </list>
     </option>
@@ -201,7 +206,7 @@
       <workItem from="1548055554105" duration="11790000" />
       <workItem from="1548218622883" duration="3227000" />
       <workItem from="1548223565767" duration="12021000" />
-      <workItem from="1548318776823" duration="5858000" />
+      <workItem from="1548318776823" duration="7052000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -214,7 +219,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40658000" />
+    <option name="totallyTimeSpent" value="41852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1280" height="926" extended-state="6" />
@@ -234,7 +239,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49918962" weight="0.32998747" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32873276" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32873276" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5008104" side_tool="true" weight="0.32998747" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -460,10 +465,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-793">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="307">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
         </state>
       </provider>
     </entry>
