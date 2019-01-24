@@ -1,0 +1,292 @@
+{% extends 'base.html' %}
+{% block content %}
+
+		<!-- Start content -->
+        <div class="content">
+
+			<div class="container-fluid">
+
+						<div class="row">
+									<div class="col-xl-12">
+											<div class="breadcrumb-holder">
+													<h1 class="main-title float-left">SubHeads</h1>
+													<ol class="breadcrumb float-right">
+														<li class="breadcrumb-item">SubHead</li>
+														<li class="breadcrumb-item active">Dashboard</li>
+													</ol>
+													<div class="clearfix"></div>
+											</div>
+									</div>
+						</div>
+						<!-- end row -->
+                <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<div class="card mb-3">
+							<div class="card-header">
+								<h3><i class="fa fa-square-o"></i> Sub Heads</h3>
+
+							</div>
+
+
+							<div class="card-body">
+
+								<div class="card text-center">
+								  <div class="card-header">
+                                      <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                                        <li role="presentation" class="active nav-item">
+                                            <a href="#Asset" aria-controls="home" class="active nav-link" role="tab" data-toggle="tab">Asset</a>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <a href="#Equity" class="nav-link"  aria-controls="profile" role="tab" data-toggle="tab">Equity</a>
+                                        </li>
+                                        <li role="presentation" class="nav-item" >
+                                            <a href="#Liability" class="nav-link"  aria-controls="messages" role="tab" data-toggle="tab">Liability</a>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <a href="#Income" class="nav-link"  aria-controls="settings" role="tab" data-toggle="tab">Revenue</a>
+                                        </li>
+                                          <li role="presentation" class="nav-item">
+                                            <a href="#Expense" class="nav-link"  aria-controls="settings" role="tab" data-toggle="tab">Expense</a>
+                                        </li>
+                                    </ul>
+
+								  </div>
+								  <div class="card-body" >
+
+                                  <div class="card-text">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="Asset">
+
+
+                                            <p class="card-text">
+                                            <h4 class="card-title">Assets</h4>
+
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover display">
+                                                    <thead>
+                                                        <tr>
+
+                                                            <th>Head</th>
+                                                            <th>Sub Heads</th>
+
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for asset in assets %}
+
+
+                                                                <tr>
+
+
+                                                                    {% if forloop.counter == 1 %}
+                                                                    <td rowspan="{{ assets|length  }}">ASSETS</td>
+                                                                        {% endif %}
+                                                                    <td>{{ asset.name }}</td>
+                                                                </tr>
+
+
+
+
+
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                                </div>
+
+                                        </p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="Equity">
+
+                                             <p class="card-text">
+                                               <h4 class="card-title">Equity</h4>
+
+                                            <div class="table-responsive">
+                                                <table id="equity" class="table table-bordered table-hover display">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Head</th>
+                                                            <th>Sub Heads</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for eq in equity %}
+
+
+
+
+                                                                 <tr>
+                                                                     {% if forloop.counter == 1 %}
+                                                                    <td rowspan="{{ equity|length  }}">Equity</td>
+
+                                                                        {% endif %}
+
+                                                                    <td>{{ eq.name }}</td>
+
+
+                                                                </tr>
+
+
+
+
+
+
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                                </div>
+
+                                        </p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="Liability">
+                                              <p class="card-text">
+                                               <h4 class="card-title">Liability</h4>
+
+                                                <div class="table-responsive">
+                                                    <table id="liability" class="table table-bordered table-hover display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Heads</th>
+                                                                <th>Sub Heads</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% for lia in liability %}
+
+
+
+
+                                                                    <tr>
+                                                                    {% if forloop.counter == 1 %}
+                                                                    <td rowspan="{{ liability|length  }}">Liability</td>
+
+                                                                        {% endif %}
+
+                                                                        <td>{{ lia.name }}</td>
+                                                                    </tr>
+
+
+
+
+
+
+                                                        {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                    </div>
+
+                                            </p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="Income">
+                                            <p class="card-text">
+                                               <h4 class="card-title">Revenue</h4>
+
+                                                <div class="table-responsive">
+                                                    <table id="income" class="table table-bordered table-hover display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Heads</th>
+                                                                <th>Sub Heads</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% for re in revenue %}
+
+
+
+
+                                                                    <tr>
+                                                                    {% if forloop.counter == 1 %}
+                                                                    <td rowspan="{{ revenue|length  }}">Revenue</td>
+
+                                                                        {% endif %}
+
+                                                                        <td>{{ re.name }}</td>
+                                                                    </tr>
+
+
+
+
+
+
+                                                        {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                    </div>
+
+                                            </p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="Expense">
+                                            <p class="card-text">
+                                               <h4 class="card-title">Expense</h4>
+
+                                                <div class="table-responsive">
+                                                    <table id="expense" class="table table-bordered table-hover display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Heads</th>
+                                                                <th>Sub Heads</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% for ex in expense %}
+
+
+
+
+                                                                    <tr>
+                                                                    {% if forloop.counter == 1 %}
+                                                                    <td rowspan="{{ expense|length  }}">Expense</td>
+
+                                                                        {% endif %}
+
+                                                                        <td>{{ ex.name }}</td>
+                                                                    </tr>
+
+
+
+
+
+
+                                                        {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                    </div>
+
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+
+
+								  </div>
+								</div>
+
+							</div>
+						</div><!-- end card-->
+                    </div>
+
+
+
+
+				</div>
+
+
+
+
+
+            </div>
+			<!-- END container-fluid -->
+
+		</div>
+		<!-- END content -->
+
+    </div>
+	<!-- END content-page -->
+{% endblock %}
+

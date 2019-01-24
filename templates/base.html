@@ -1,0 +1,89 @@
+{% block header %}
+    {% include 'header.html' %}
+{% endblock %}
+	<!-- End Navigation -->
+
+
+	<!-- Left Sidebar -->
+	<div class="left main-sidebar">
+        {% block sidebar %}
+            {% include "sidebar.html" %}
+        {% endblock %}
+
+
+
+	</div>
+	<!-- End Sidebar -->
+
+
+    <div class="content-page">
+
+		<!-- Start content -->
+
+        {% block content %}
+        {% endblock  %}
+		<!-- END content -->
+
+    </div>
+	<!-- END content-page -->
+
+	<footer class="footer">
+		<span class="text-right">
+		Copyright <a target="_blank" href="#">Yarn Management System</a>
+		</span>
+		<span class="float-right">
+		Powered by <a target="_blank" href="#"><b>Comsats </b></a>
+		</span>
+	</footer>
+
+</div>
+<!-- END main -->
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock  %}
+<script>
+    $('.submenu').find('a:first').click(function () {
+        dropdown=$(this).next();
+        $(dropdown).css("display", "block");
+        console.log();
+        $(dropdown).find('ul.list-unstyled').css("display", "block");
+
+    });
+    $(document).ready(function () {
+        $('#id_head').change(function () {
+            csrf=$('input[name="csrfmiddlewaretoken"]').val()
+            $.ajax({
+                url:"{% url 'loadsubhead'  %}",
+                data: {
+                  'id': this.value,
+                    'csrfmiddlewaretoken':csrf
+                },
+                method:'POST'
+            }).done(function (data) {
+                sub=JSON.parse(data.subheads);
+                $('#id_subhead')
+                    .find('option')
+                    .remove();
+                sub.forEach(function (ele) {
+                    option='<option value="'+ele.pk+'">'+ele.fields.name+'</option>';
+                    $("#id_subhead").append(option);
+                });
+
+            });
+
+
+        });
+
+
+    });
+
+
+
+
+</script>
+
+
+<!-- END Java Script for this page -->
+
+</body>
+</html>
