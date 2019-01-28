@@ -81,16 +81,16 @@ def savejournalVoucher(request):
             debitName = "form-" + str(i) + "-debit"
             creditName = "form-" + str(i) + "-credit"
             descriptionName = "form-" + str(i) + "-description"
-            accountID = request.POST[target]
+            accountID = request.POST.get(target)
             if debitName in request.POST:
-                debit = request.POST[debitName]
+                debit = request.POST.get(debitName)
             else:
                 debit = 0
             if creditName in request.POST:
-                credit = request.POST[creditName]
+                credit = request.POST.get(creditName)
             else:
                 credit = 0
-            description = request.POST[descriptionName]
+            description = request.POST.get(descriptionName)
             amount = 0
             if debit:
                 amount = float(debit)
