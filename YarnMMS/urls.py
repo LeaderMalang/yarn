@@ -26,4 +26,7 @@ urlpatterns = [
     url(r'^addacounts/', views.addAccount, name='addacounts'),
     url(r'^loadsubhead/', views.loadsubhead, name='loadsubhead'),
     url(r'^saveAccounts/', views.saveAccounts, name='saveAccounts'),
+    url(r'^journajVoucher/', views.journajVoucher, name='journajVoucher'),
+    url(r'^savejournalVoucher/', views.savejournalVoucher, name='savejournalVoucher'),
+    url(r'^accountBalances/', views.accountBalance, name='accountBalances'),
 ]

@@ -1,7 +1,532 @@
-{
-  "name": "YarnMMS",
-  "version": "1.0.0",
-  "dependencies": {
-    
+[
+  {
+    "model": "Accounts.heads",
+    "pk": 1,
+    "fields": {
+      "name": "ASSETS"
+    }
+  },
+  {
+    "model": "Accounts.heads",
+    "pk": 2,
+    "fields": {
+      "name": "LIABILITIES"
+    }
+  },
+  {
+    "model": "Accounts.heads",
+    "pk": 3,
+    "fields": {
+      "name": "EQUITY"
+    }
+  },
+  {
+    "model": "Accounts.heads",
+    "pk": 4,
+    "fields": {
+      "name": "EXPENSE"
+    }
+  },
+  {
+    "model": "Accounts.heads",
+    "pk": 5,
+    "fields": {
+      "name": "REVENUE"
+    }
+  },
+
+  {
+    "model": "Accounts.subheads",
+    "pk": 1,
+    "fields": {
+      "head": 1,
+      "name": "CASH"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 2,
+    "fields": {
+      "head": 1,
+      "name": "BANK"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 3,
+    "fields": {
+      "head": 1,
+      "name": "INVENTORY"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 4,
+    "fields": {
+      "head": 1,
+      "name": "ACCOUNTS RECIEVEABLE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 5,
+    "fields": {
+      "head": 1,
+      "name": "PREPAID EXPENSES"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 6,
+    "fields": {
+      "head": 1,
+      "name": "PROPERTY, PLANT & EQUIPMENT"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 7,
+    "fields": {
+      "head": 1,
+      "name": "INPUT GST ON CONTRACT"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 8,
+    "fields": {
+      "head": 1,
+      "name": "INCOME-TAX DEDUCTED AT SOURCE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 9,
+    "fields": {
+      "head": 1,
+      "name": "GST WITHHELD"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 10,
+    "fields": {
+      "head": 2,
+      "name": "ACCOUNTS PAYABLE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 11,
+    "fields": {
+      "head": 2,
+      "name": "TAX PAYABLE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 12,
+    "fields": {
+      "head": 2,
+      "name": "SALARIES & WAGES PAYABLE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 13,
+    "fields": {
+      "head": 2,
+      "name": "OTHER ACCRUED EXPENSES PAYABLE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 14,
+    "fields": {
+      "head": 2,
+      "name": "INTERCOMPANY PAYABLES"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 15,
+    "fields": {
+      "head": 2,
+      "name": "OUTPUT GST"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 16,
+    "fields": {
+      "head": 3,
+      "name": "OWNER'S CAPITAL"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 17,
+    "fields": {
+      "head": 3,
+      "name": "RETAINED EARNINGS"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 18,
+    "fields": {
+      "head": 2,
+      "name": "DIVIDENDS"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 19,
+    "fields": {
+      "head": 3,
+      "name": "DRAWINGS"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 20,
+    "fields": {
+      "head": 4,
+      "name": "OPERATING EXPENSE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 21,
+    "fields": {
+      "head": 4,
+      "name": "ADMINISTRATIVE EXPENSE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 22,
+    "fields": {
+      "head": 4,
+      "name": "SELLING EXPENSE "
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 23,
+    "fields": {
+      "head": 4,
+      "name": "FINANCIAL EXPENSE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 24,
+    "fields": {
+      "head": 5,
+      "name": "OPERATING REVENUE"
+    }
+  },
+  {
+    "model": "Accounts.subheads",
+    "pk": 25,
+    "fields": {
+      "head": 5,
+      "name": "OTHER REVENUE"
+    }
+  },
+
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 1,
+    "fields": {
+      "head": 1,
+      "subhead": 1,
+      "name": "CASH IN HAND",
+      "code": "00001-00001-00001"
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 2,
+    "fields": {
+      "head": 1,
+      "subhead": 3,
+      "name": "GOODS IN TRANSIT",
+      "code": "00001-00003-00002"
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 3,
+    "fields": {
+      "head": 1,
+      "subhead": 3,
+      "name": "GOODS OUT TRANSIT",
+      "code": "00001-00003-00003"
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 4,
+    "fields": {
+      "head": 1,
+      "subhead": 3,
+      "name": "WORK IN PROGRESS",
+      "code": "00001-00003-00004"
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 5,
+    "fields": {
+      "head": 1,
+      "subhead": 3,
+      "name": "CURRENT STOCK",
+      "code": "00001-00003-00005"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 6,
+    "fields": {
+      "head": 1,
+      "subhead": 5,
+      "name": "INSURANCE",
+      "code": "00001-00005-00006"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 7,
+    "fields": {
+      "head": 1,
+      "subhead": 6,
+      "name": "REPAIRS & MAINTAINANCE",
+      "code": "00001-00006-00007"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 8,
+    "fields": {
+      "head": 1,
+      "subhead": 6,
+      "name": "ADVANCE RENT",
+      "code": "00001-00006-00008"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 9,
+    "fields": {
+      "head": 1,
+      "subhead": 7,
+      "name": "INPUT SALES TAX ",
+      "code": "00001-00007-00009"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 10,
+    "fields": {
+      "head": 1,
+      "subhead": 8,
+      "name": "INPUT SALES TAX ON CONTRACT",
+      "code": "00001-00008-000010"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 11,
+    "fields": {
+      "head": 2,
+      "subhead": 14,
+      "name": "RENT",
+      "code": "00002-000014-000011"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 12,
+    "fields": {
+      "head": 2,
+      "subhead": 14,
+      "name": "INTEREST",
+      "code": "00002-000014-000012"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 13,
+    "fields": {
+      "head": 2,
+      "subhead": 14,
+      "name": "PROPERTY TAXES",
+      "code": "00002-000014-000013"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 14,
+    "fields": {
+      "head": 2,
+      "subhead": 16,
+      "name": "OUTPUT SALES TAX",
+      "code": "00002-000016-000014"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 15,
+    "fields": {
+      "head": 3,
+      "subhead": 18,
+      "name": "PROFIT/(LOSS) FOR THE YEAR",
+      "code": "00003-000018-000015"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 16,
+    "fields": {
+      "head": 3,
+      "subhead": 18,
+      "name": "PROFIT/(LOSS) CARRIED FORWARD",
+      "code": "00003-000018-000016"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 17,
+    "fields": {
+      "head": 3,
+      "subhead": 19,
+      "name": "DIVEDENDS FOR THE YEAR",
+      "code": "00003-000019-000017"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 18,
+    "fields": {
+      "head": 4,
+      "subhead": 22,
+      "name": "SALARIES (ADMINISTRATIVE STAFF) EXPENSE",
+      "code": "00004-000022-000018"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 19,
+    "fields": {
+      "head": 4,
+      "subhead": 22,
+      "name": "UTILITIES EXPENSE ",
+      "code": "00004-000022-000019"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 20,
+    "fields": {
+      "head": 4,
+      "subhead": 22,
+      "name": "RENT EXPENSE",
+      "code": "00004-000022-000020"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 21,
+    "fields": {
+      "head": 4,
+      "subhead": 23,
+      "name": "ADVERTISEMENT EXPENSE",
+      "code": "00004-000023-000021"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 22,
+    "fields": {
+      "head": 4,
+      "subhead": 23,
+      "name": "SALARIES (SALES STAFF) EXPENSE",
+      "code": "00004-000023-000022"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 23,
+    "fields": {
+      "head": 4,
+      "subhead": 24,
+      "name": "BANK CHARGES EXPENSE ",
+      "code": "00004-000024-000023"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 24,
+    "fields": {
+      "head": 4,
+      "subhead": 24,
+      "name": "INTEREST EXPENSE",
+      "code": "00004-000024-000024"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 25,
+    "fields": {
+      "head": 5,
+      "subhead": 25,
+      "name": "SERVICES REVENUE",
+      "code": "00005-000025-000025"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 26,
+    "fields": {
+      "head": 5,
+      "subhead": 25,
+      "name": "RENTAL REVENUE",
+      "code": "00005-000026-000026"
+
+    }
+  },
+  {
+    "model": "Accounts.elementaryhead",
+    "pk": 27,
+    "fields": {
+      "head": 5,
+      "subhead": 25,
+      "name": "INTEREST REVENUE",
+      "code": "00005-000026-000027"
+
+    }
   }
-}
+]

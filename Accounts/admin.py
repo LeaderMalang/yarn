@@ -4,3 +4,5 @@ from Accounts.models import *
 admin.site.register(heads)
 admin.site.register(subheads)
 admin.site.register(elementaryhead)
+admin.site.register(voucher)
+admin.site.register(accounts)
