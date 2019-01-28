@@ -92,12 +92,10 @@ def savejournalVoucher(request):
                 credit = 0
             description = request.POST[descriptionName]
             amount = 0
-            if debit != '':
-                debit = int(debit)
-                amount = currency_display(debit)
-            if credit != '':
-                credit = int(credit)
-                amount = currency_display(-credit)
+            if debit:
+                amount = float(debit)
+            if credit:
+                amount = -float(credit)
 
             # print(amount, accountID, tID.id,debit,credit)
 
