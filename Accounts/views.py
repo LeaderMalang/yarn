@@ -26,15 +26,18 @@ def subhead(request):
 
 
 def elementaryHead (request):
-    assets = elementaryhead.objects.filter(head=1).annotate(dcount=Sum('subhead_id'))
-    equity = elementaryhead.objects.filter(head=3)
-    liability = elementaryhead.objects.filter(head=2)
-    revenue = elementaryhead.objects.filter(head=5)
-    expense = elementaryhead.objects.filter(head=4)
-    return render(request,'elementaryhead.html',{"assets":assets,"equity":equity,"liability":liability,"revenue":revenue,"expense":expense})
+    assetsQuery = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=1 AND ele.subhead_id=sub.id')
+    equity = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=3 AND ele.subhead_id=sub.id')
+    liability = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=2 AND ele.subhead_id=sub.id')
+    revenue = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=5 AND ele.subhead_id=sub.id')
+    expense = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=4 AND ele.subhead_id=sub.id')
+    return render(request,'elementaryhead.html',{"assets":assetsQuery,"equity":equity,"liability":liability,"revenue":revenue,"expense":expense})
 
 def addAccount(request):
     form=AccountsForm()
+    form.fields['head'].choices=((0,'Select Head'),(1,'ASSETS'),(2,'LIABILITIES'),(3,'EQUITY'),(4,'EXPENSE'),(5,'REVENUE'))
+
+
     return render(request,'addAccounts.html',{'form':form})
 
 def loadsubhead(request):
@@ -49,18 +52,16 @@ def loadsubhead(request):
 
 def saveAccounts(request):
     if request.method == 'POST':
-        elementary=AccountsForm(request.POST)
-        if elementary.is_valid():
-            newelementary=elementary.save(commit=False)
-            accountID = elementaryhead.objects.order_by('id').last().id + 1
-            headID=elementary.cleaned_data['head']
-            subheadID=elementary.cleaned_data['subhead']
-            newelementary.code = '0000'+str(headID.id)+'-'+ '0000' + str(subheadID.id) + '-0000' + str(accountID)
-            newelementary.fixed=True
-            newelementary.save()
+        accountID = elementaryhead.objects.order_by('id').last().id + 1
+
+        subheadID=request.POST.get('subhead')
+        headID=request.POST.get('head')
+        code = '0000'+str(headID)+'-'+ '0000' + str(subheadID) + '-0000' + str(accountID)
+        elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),name=request.POST.get('name'), fixed=False, codes=code)
 
 
-    return elementaryHead(request)
+
+    return render(request,'test2.html')
 
 def journajVoucher(request):
     form=TransactionItemFormset()
@@ -91,22 +92,22 @@ def savejournalVoucher(request):
             else:
                 credit = 0
             description = request.POST.get(descriptionName)
-            amount = 0
+
             if debit:
-                amount = float(debit)
+                debit = float(debit)
             if credit:
-                amount = -float(credit)
+                credit = -float(credit)
 
             # print(amount, accountID, tID.id,debit,credit)
 
             accountID = int(accountID)
-            head=elementaryhead.objects.values('head_id').get(id=accountID)
-            subhead=elementaryhead.objects.values('subhead_id').get(id=accountID)
-            query = ''' INSERT INTO `Accounts_accounts`(`voucherType`, `title`, `description`, `amount`, `balance`, `date`, `voucherFlag`, `dateTime`, `elementary_id`, `head_id`, `subhead_id`, `voucherID_id`) VALUES
-                                                     (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) '''
+
+            query = ''' INSERT INTO `Accounts_accounts`(`voucherType`, `title`, `description`, `balance`, `date`, `voucherFlag`, `dateTime`, `elementary_id`, `voucherID_id`, `credit`, `debit`) VALUES
+                                                     (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) '''
+
             c = connection.cursor()
             try:
-                c.execute(query, [voucherType, '', description, amount, 0, date, 0, datetime.datetime.now(), accountID, head['head_id'],subhead['subhead_id'], voucherID.id])
+                c.execute(query, [voucherType, '', description,0, date, 0, datetime.datetime.now(), accountID, voucherID.id,credit,debit])
             finally:
                 c.close()
 
