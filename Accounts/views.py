@@ -61,7 +61,7 @@ def saveAccounts(request):
 
 
 
-    return render(request,'test2.html')
+    return elementaryHead(request)
 
 def journajVoucher(request):
     form=TransactionItemFormset()
@@ -111,7 +111,7 @@ def savejournalVoucher(request):
             finally:
                 c.close()
 
-    return render(request,'test2.html')
+    return elementaryHead(request)
 
 def accountBalance(request):
     balances=accounts.objects.aggregate(Sum('amount'))
