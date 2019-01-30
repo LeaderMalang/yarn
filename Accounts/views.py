@@ -107,21 +107,21 @@ def savejournalVoucher(request):
             # print(amount, accountID, tID.id,debit,credit)
 
             accountID = int(accountID)
-            accountType=elementaryhead.objects.values('left','right').filter(id=accountID)
+            #accountType=elementaryhead.objects.values('left','right').filter(id=accountID)
             lastBalance=accounts.objects.values('balance').filter(elementary=accountID).last()
-            left=accountType[0].get('left')
-            right=accountType[0].get('right')
+            # left=accountType[0].get('left')
+            # right=accountType[0].get('right')
             balance=0
             if lastBalance:
                 lastBalance = lastBalance.get('balance')
-                if debit and left:
+                if debit:
                     balance=lastBalance+debit
-                elif credit and right:
+                elif credit:
                     balance=lastBalance-credit
             else:
-                if debit and left:
+                if debit:
                     balance=0+debit
-                elif credit and right:
+                elif credit:
                     balance=0-credit
 
 

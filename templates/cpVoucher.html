@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start content -->
+        <div class="content">
+
+			<div class="container-fluid">
+
+						<div class="row">
+									<div class="col-xl-12">
+											<div class="breadcrumb-holder">
+													<h1 class="main-title float-left">Dashboard</h1>
+													<ol class="breadcrumb float-right">
+														<li class="breadcrumb-item">Home</li>
+														<li class="breadcrumb-item active">Dashboard</li>
+													</ol>
+													<div class="clearfix"></div>
+											</div>
+									</div>
+						</div>
+						<!-- end row -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<div class="card mb-3">
+							<div class="card-header">
+								<h3><i class="fa fa-check-square-o"></i>Journal Voucher</h3>
+
+							</div>
+
+							<div class="card-body">
+
+								<form action="{% url 'savejournalVoucher' %}" onsubmit="return false" id="journalEntry" method="post">
+                                    {% csrf_token %}
+                                    {{ formset.management_form }}
+
+                                    <div class="col-4">
+                                        <div class="mt-5"></div>
+
+                                    <div class="form-group">
+                                      <label>Date</label>
+                                      {{ form.1.date  }}
+
+								  </div>
+
+                                    </div>
+                                <input type="hidden" id="totalElements" name="tElements" value="">
+                                    <div class="col-12 insertTrascationItems">
+
+                                        {% for form in form %}
+                                        <div class="form-row trasactionItem">
+                                            <div class="form-group col-2"><label>Account</label>{{ form.elementary }}</div>
+                                            <div class="form-group col-2"><label>Debit</label>{{ form.debit }}</div>
+                                            <div class="form-group col-2"><label>Credit</label>{{ form.credit }}</div>
+                                            <div class="form-group col-2"><label>Description</label>{{ form.description }}</div>
+                                            <div class="form-group col-2"><label>Delete</label><span class="form-inline remove-form-row"> <i class="fa fa-remove"></i></span></div>
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary add-form-row" type="button" id="addtrasaction">Add New</button>
+                                    </div>
+
+
+								  <button type="button" onclick="validateEntry()"  class="btn btn-primary">Submit</button>
+								</form>
+
+
+							</div>
+						</div><!-- end card-->
+                    </div>
+
+
+
+
+
+
+               </div>
+			<!-- END container-fluid -->
+
+		</div>
+		<!-- END content -->
+
+    </div>
+	<!-- END content-page -->
+{% endblock %}
