@@ -27,6 +27,7 @@
 							</div>
 
 							<div class="card-body">
+                            <span class="error alert alert-danger" style="display: none"></span>
 
 								<form action="{% url 'savejournalVoucher' %}" onsubmit="return false" id="journalEntry" method="post">
                                     {% csrf_token %}

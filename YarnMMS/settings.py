@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'YarnMMS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'newYarnMS',
+        'NAME': 'newYarnMMS',
         'USER': 'root',
         'PASSWORD':'',
         'HOST': '127.0.0.1',
