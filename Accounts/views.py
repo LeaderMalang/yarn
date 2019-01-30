@@ -57,7 +57,13 @@ def saveAccounts(request):
         subheadID=request.POST.get('subhead')
         headID=request.POST.get('head')
         code = '0000'+str(headID)+'-'+ '0000' + str(subheadID) + '-0000' + str(accountID)
-        elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),name=request.POST.get('name'), fixed=False, codes=code)
+        if int(headID) in [1,2]:
+            elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),name=request.POST.get('name'), fixed=False, codes=code,left=True)
+        elif int(headID) in [3,4,5]:
+            elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),
+                                                       name=request.POST.get('name'), fixed=False, codes=code,
+                                                       right=True)
+
 
 
 
@@ -96,18 +102,36 @@ def savejournalVoucher(request):
             if debit:
                 debit = float(debit)
             if credit:
-                credit = -float(credit)
+                credit = float(credit)
 
             # print(amount, accountID, tID.id,debit,credit)
 
             accountID = int(accountID)
+            accountType=elementaryhead.objects.values('left','right').filter(id=accountID)
+            lastBalance=accounts.objects.values('balance').filter(elementary=accountID).last()
+            left=accountType[0].get('left')
+            right=accountType[0].get('right')
+            balance=0
+            if lastBalance:
+                lastBalance = lastBalance.get('balance')
+                if debit and left:
+                    balance=lastBalance+debit
+                elif credit and right:
+                    balance=lastBalance-credit
+            else:
+                if debit and left:
+                    balance=0+debit
+                elif credit and right:
+                    balance=0-credit
+
+
 
             query = ''' INSERT INTO `Accounts_accounts`(`voucherType`, `title`, `description`, `balance`, `date`, `voucherFlag`, `dateTime`, `elementary_id`, `voucherID_id`, `credit`, `debit`) VALUES
                                                      (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) '''
 
             c = connection.cursor()
             try:
-                c.execute(query, [voucherType, '', description,0, date, 0, datetime.datetime.now(), accountID, voucherID.id,credit,debit])
+                c.execute(query, [voucherType, '', description,balance, date, 0, datetime.datetime.now(), accountID, voucherID.id,credit,debit])
             finally:
                 c.close()
 

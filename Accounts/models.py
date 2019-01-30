@@ -25,6 +25,8 @@ class elementaryhead(models.Model):
     name=models.CharField(max_length=50)
     fixed=models.BooleanField(default=False,editable=False)
     codes=models.CharField(max_length=50,editable=False,default=None)
+    left=models.BooleanField(default=False,editable=False)
+    right=models.BooleanField(default=False,editable=False)
 
     def __str__(self):
         return self.name
@@ -41,8 +43,8 @@ class accounts(models.Model):
     voucherType=models.CharField(max_length=20,editable=False,default=None)
     title=models.CharField(max_length=50)
     description=models.CharField(max_length=50)
-    debit=models.DecimalField(max_digits=15, decimal_places=3,default=None)
-    credit=models.DecimalField(max_digits=15, decimal_places=3,default=None)
+    debit=models.DecimalField(max_digits=15,decimal_places=3,default=None)
+    credit=models.DecimalField(max_digits=15,decimal_places=3,default=None)
     balance=models.IntegerField()
     date=models.DateField(format('YY-MM-DD'))
     voucherFlag=models.BooleanField(default=False)
