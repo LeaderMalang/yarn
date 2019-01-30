@@ -107,24 +107,33 @@ def savejournalVoucher(request):
             # print(amount, accountID, tID.id,debit,credit)
 
             accountID = int(accountID)
-            #accountType=elementaryhead.objects.values('left','right').filter(id=accountID)
+            accountType=elementaryhead.objects.values('left','right').filter(id=accountID)
             lastBalance=accounts.objects.values('balance').filter(elementary=accountID).last()
-            # left=accountType[0].get('left')
-            # right=accountType[0].get('right')
+            left=accountType[0].get('left')
+            right=accountType[0].get('right')
             balance=0
+            print(left,right)
             if lastBalance:
                 lastBalance = lastBalance.get('balance')
-                if debit:
+                if debit and left:
                     balance=lastBalance+debit
-                elif credit:
+                else:
+                    balance=lastBalance-debit
+                if credit and right:
+                    balance=lastBalance+credit
+                else:
                     balance=lastBalance-credit
             else:
-                if debit:
-                    balance=0+debit
-                elif credit:
-                    balance=0-credit
+                if debit and left:
+                    balance=balance+debit
+                else:
+                    balance=balance-debit
+                if credit and right:
+                    balance=balance+credit
+                else:
+                    balance=balance-credit
 
-
+            print(balance)
 
             query = ''' INSERT INTO `Accounts_accounts`(`voucherType`, `title`, `description`, `balance`, `date`, `voucherFlag`, `dateTime`, `elementary_id`, `voucherID_id`, `credit`, `debit`) VALUES
                                                      (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) '''
