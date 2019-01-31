@@ -3,14 +3,14 @@
     "model": "Accounts.heads",
     "pk": 1,
     "fields": {
-      "name": "ASSETS"
+      "name": "ASSET"
     }
   },
   {
     "model": "Accounts.heads",
     "pk": 2,
     "fields": {
-      "name": "LIABILITIES"
+      "name": "EXPENSE"
     }
   },
   {
@@ -24,7 +24,7 @@
     "model": "Accounts.heads",
     "pk": 4,
     "fields": {
-      "name": "EXPENSE"
+      "name": "LIABILITIE"
     }
   },
   {
@@ -129,7 +129,7 @@
     "model": "Accounts.subheads",
     "pk": 10,
     "fields": {
-      "head": 2,
+      "head": 4,
       "name": "ACCOUNTS PAYABLE",
       "fixed": 1
 
@@ -139,7 +139,7 @@
     "model": "Accounts.subheads",
     "pk": 11,
     "fields": {
-      "head": 2,
+      "head": 4,
       "name": "TAX PAYABLE",
       "fixed": 1
 
@@ -149,7 +149,7 @@
     "model": "Accounts.subheads",
     "pk": 12,
     "fields": {
-      "head": 2,
+      "head": 4,
       "name": "SALARIES & WAGES PAYABLE",
       "fixed": 1
 
@@ -169,7 +169,7 @@
     "model": "Accounts.subheads",
     "pk": 14,
     "fields": {
-      "head": 2,
+      "head": 4,
       "name": "INTERCOMPANY PAYABLES",
       "fixed": 1
 
@@ -179,7 +179,7 @@
     "model": "Accounts.subheads",
     "pk": 15,
     "fields": {
-      "head": 2,
+      "head": 4,
       "name": "OUTPUT GST",
       "fixed": 1
 
@@ -209,7 +209,7 @@
     "model": "Accounts.subheads",
     "pk": 18,
     "fields": {
-      "head": 2,
+      "head":4,
       "name": "DIVIDENDS",
       "fixed": 1
 
@@ -229,7 +229,7 @@
     "model": "Accounts.subheads",
     "pk": 20,
     "fields": {
-      "head": 4,
+      "head": 2,
       "name": "OPERATING EXPENSE",
       "fixed": 1
 
@@ -239,7 +239,7 @@
     "model": "Accounts.subheads",
     "pk": 21,
     "fields": {
-      "head": 4,
+      "head": 2,
       "name": "ADMINISTRATIVE EXPENSE",
       "fixed": 1
 
@@ -249,7 +249,7 @@
     "model": "Accounts.subheads",
     "pk": 22,
     "fields": {
-      "head": 4,
+      "head": 2,
       "name": "SELLING EXPENSE ",
       "fixed": 1
 
@@ -259,7 +259,7 @@
     "model": "Accounts.subheads",
     "pk": 23,
     "fields": {
-      "head": 4,
+      "head": 2,
       "name": "FINANCIAL EXPENSE",
       "fixed": 1
 
@@ -401,7 +401,9 @@
       "subhead": 7,
       "name": "INPUT SALES TAX ",
       "codes": "00001-00007-00009",
-      "fixed": 1
+      "fixed": 1,
+      "left": 1,
+      "right": 0
 
 
     }
@@ -426,7 +428,7 @@
     "fields": {
       "subhead": 14,
       "name": "RENT",
-      "codes": "00002-000014-000011",
+      "codes": "00004-000014-000011",
       "fixed": 1,
       "left":0 ,
       "right":1
@@ -440,7 +442,7 @@
     "fields": {
       "subhead": 14,
       "name": "INTEREST",
-      "codes": "00002-000014-000012",
+      "codes": "00004-000014-000012",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -454,7 +456,7 @@
     "fields": {
       "subhead": 14,
       "name": "PROPERTY TAXES",
-      "codes": "00002-000014-000013",
+      "codes": "00004-000014-000013",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -468,7 +470,7 @@
     "fields": {
       "subhead": 16,
       "name": "OUTPUT SALES TAX",
-      "codes": "00002-000016-000014",
+      "codes": "00004-000016-000014",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -524,7 +526,7 @@
     "fields": {
       "subhead": 22,
       "name": "SALARIES (ADMINISTRATIVE STAFF) EXPENSE",
-      "codes": "00004-000022-000018",
+      "codes": "00002-000022-000018",
       "fixed": 1,
        "left":1 ,
       "right":0
@@ -538,7 +540,7 @@
     "fields": {
       "subhead": 22,
       "name": "UTILITIES EXPENSE ",
-      "codes": "00004-000022-000019",
+      "codes": "00002-000022-000019",
       "fixed": 1,
       "left":1 ,
       "right":0
@@ -552,7 +554,7 @@
     "fields": {
       "subhead": 22,
       "name": "RENT EXPENSE",
-      "codes": "00004-000022-000020",
+      "codes": "00002-000022-000020",
       "fixed": 1,
       "left":1 ,
       "right":0
@@ -566,7 +568,7 @@
     "fields": {
       "subhead": 23,
       "name": "ADVERTISEMENT EXPENSE",
-      "codes": "00004-000023-000021",
+      "codes": "00002-000023-000021",
       "fixed": 1,
       "left":1 ,
       "right":0
@@ -580,7 +582,7 @@
     "fields": {
       "subhead": 23,
       "name": "SALARIES (SALES STAFF) EXPENSE",
-      "codes": "00004-000023-000022",
+      "codes": "00002-000023-000022",
       "fixed": 1,
       "left":1 ,
       "right":0
@@ -594,7 +596,7 @@
     "fields": {
       "subhead": 24,
       "name": "BANK CHARGES EXPENSE ",
-      "codes": "00004-000024-000023",
+      "codes": "00002-000024-000023",
       "fixed": 1,
       "left":1 ,
       "right":0
@@ -608,7 +610,7 @@
     "fields": {
       "subhead": 24,
       "name": "INTEREST EXPENSE",
-      "codes": "00004-000024-000024",
+      "codes": "00002-000024-000024",
       "fixed": 1,
       "left":1 ,
       "right":0

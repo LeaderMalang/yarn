@@ -57,9 +57,9 @@ def saveAccounts(request):
         subheadID=request.POST.get('subhead')
         headID=request.POST.get('head')
         code = '0000'+str(headID)+'-'+ '0000' + str(subheadID) + '-0000' + str(accountID)
-        if int(headID) in [1,4]:
+        if int(headID) in [1,2]:
             elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),name=request.POST.get('name'), fixed=False, codes=code,left=True)
-        elif int(headID) in [3,2,5]:
+        elif int(headID) in [3,4,5]:
             elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),
                                                        name=request.POST.get('name'), fixed=False, codes=code,
                                                        right=True)
@@ -118,7 +118,6 @@ def savejournalVoucher(request):
             left=accountType[0].get('left')
             right=accountType[0].get('right')
 
-            print(debit)
             if lastBalance:
                 lastBalance = lastBalance.get('balance')
 
@@ -141,7 +140,7 @@ def savejournalVoucher(request):
                 else:
                     balance=balance-credit
 
-            print(balance)
+
 
             query = ''' INSERT INTO `Accounts_accounts`(`voucherType`, `title`, `description`, `balance`, `date`, `voucherFlag`, `dateTime`, `elementary_id`, `voucherID_id`, `credit`, `debit`) VALUES
                                                      (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) '''
@@ -151,8 +150,7 @@ def savejournalVoucher(request):
                 c.execute(query, [voucherType, '', description,balance, date, 0, datetime.datetime.now(), accountID, voucherID.id,credit,debit])
             finally:
                 c.close()
-    newbalance=balance-totaldebit+totalcredit
-    print(newbalance)
+
     return elementaryHead(request)
 
 def accountBalance(request):
