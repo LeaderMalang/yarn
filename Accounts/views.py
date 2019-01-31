@@ -83,7 +83,11 @@ def savejournalVoucher(request):
         voucherType = "Journal"
         date = request.POST['form-1-date']
         totalelements = request.POST['tElements']
+        totaldebit=0
+        totalcredit=0
+
         for i in range(int(totalelements)):
+            balance = 0
             target = "form-" + str(i) + "-elementary"
             debitName = "form-" + str(i) + "-debit"
             creditName = "form-" + str(i) + "-credit"
@@ -101,8 +105,10 @@ def savejournalVoucher(request):
 
             if debit:
                 debit = float(debit)
+                totaldebit=totaldebit+debit
             if credit:
                 credit = float(credit)
+                totalcredit=totalcredit+credit
 
             # print(amount, accountID, tID.id,debit,credit)
 
@@ -111,27 +117,29 @@ def savejournalVoucher(request):
             lastBalance=accounts.objects.values('balance').filter(elementary=accountID).last()
             left=accountType[0].get('left')
             right=accountType[0].get('right')
-            balance=0
+
             print(left,right)
             if lastBalance:
                 lastBalance = lastBalance.get('balance')
-                if debit and left:
-                    balance=lastBalance+debit
-                else:
-                    balance=lastBalance-debit
-                if credit and right:
-                    balance=lastBalance+credit
-                else:
+
+                if debit:
+                    balance=lastBalance + debit
+                # else:
+                #     balance=lastBalance-debit
+
+                if credit:
                     balance=lastBalance-credit
+                # else:
+                #     balance=lastBalance-credit
             else:
-                if debit and left:
-                    balance=balance+debit
-                else:
-                    balance=balance-debit
-                if credit and right:
-                    balance=balance+credit
-                else:
+                if debit:
+                     balance=balance+debit
+                # else:
+                #     balance=balance-debit
+                if credit:
                     balance=balance-credit
+                # else:
+                #     balance=balance-credit
 
             print(balance)
 
@@ -143,7 +151,8 @@ def savejournalVoucher(request):
                 c.execute(query, [voucherType, '', description,balance, date, 0, datetime.datetime.now(), accountID, voucherID.id,credit,debit])
             finally:
                 c.close()
-
+    newbalance=balance-totaldebit+totalcredit
+    print(newbalance)
     return elementaryHead(request)
 
 def accountBalance(request):
