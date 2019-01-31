@@ -55,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/Accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="141">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
+              <caret line="143" selection-start-line="143" selection-end-line="143" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -259,7 +259,7 @@
       <workItem from="1548650246627" duration="10840000" />
       <workItem from="1548737105710" duration="17050000" />
       <workItem from="1548822789486" duration="16199000" />
-      <workItem from="1548910119256" duration="4879000" />
+      <workItem from="1548910119256" duration="7086000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -272,10 +272,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109140000" />
+    <option name="totallyTimeSpent" value="111347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1280" height="926" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28606158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -379,23 +380,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Accounts/views.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Accounts/views.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Accounts/views.py</url>
-          <line>125</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Accounts/views.py</url>
-          <line>150</line>
-          <option name="timeStamp" value="28" />
+          <line>143</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -668,7 +654,7 @@
     <entry file="file://$PROJECT_DIR$/Accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

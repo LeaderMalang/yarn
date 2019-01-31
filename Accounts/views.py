@@ -57,9 +57,9 @@ def saveAccounts(request):
         subheadID=request.POST.get('subhead')
         headID=request.POST.get('head')
         code = '0000'+str(headID)+'-'+ '0000' + str(subheadID) + '-0000' + str(accountID)
-        if int(headID) in [1,2]:
+        if int(headID) in [1,4]:
             elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),name=request.POST.get('name'), fixed=False, codes=code,left=True)
-        elif int(headID) in [3,4,5]:
+        elif int(headID) in [3,2,5]:
             elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),
                                                        name=request.POST.get('name'), fixed=False, codes=code,
                                                        right=True)
@@ -118,28 +118,28 @@ def savejournalVoucher(request):
             left=accountType[0].get('left')
             right=accountType[0].get('right')
 
-            print(left,right)
+            print(debit)
             if lastBalance:
                 lastBalance = lastBalance.get('balance')
 
-                if debit:
-                    balance=lastBalance + debit
-                # else:
-                #     balance=lastBalance-debit
+                if debit and left:
+                    balance = lastBalance + debit
+                elif debit:
+                    balance = lastBalance-debit
 
-                if credit:
+                if credit and right:
+                    balance=lastBalance+credit
+                elif credit:
                     balance=lastBalance-credit
-                # else:
-                #     balance=lastBalance-credit
             else:
-                if debit:
+                if debit and left:
                      balance=balance+debit
-                # else:
-                #     balance=balance-debit
-                if credit:
+                else:
+                    balance=balance-debit
+                if credit and right:
+                    balance=balance+credit
+                else:
                     balance=balance-credit
-                # else:
-                #     balance=balance-credit
 
             print(balance)
 
