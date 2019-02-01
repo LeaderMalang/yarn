@@ -3,7 +3,7 @@
     "model": "Accounts.heads",
     "pk": 1,
     "fields": {
-      "name": "ASSET"
+      "name": "ASSETS"
     }
   },
   {
@@ -17,14 +17,14 @@
     "model": "Accounts.heads",
     "pk": 3,
     "fields": {
-      "name": "EQUITY"
+      "name": "LIABILITIES"
     }
   },
   {
     "model": "Accounts.heads",
     "pk": 4,
     "fields": {
-      "name": "LIABILITIE"
+      "name": "EQUITY"
     }
   },
   {
@@ -129,7 +129,7 @@
     "model": "Accounts.subheads",
     "pk": 10,
     "fields": {
-      "head": 4,
+      "head": 3,
       "name": "ACCOUNTS PAYABLE",
       "fixed": 1
 
@@ -139,7 +139,7 @@
     "model": "Accounts.subheads",
     "pk": 11,
     "fields": {
-      "head": 4,
+      "head": 3,
       "name": "TAX PAYABLE",
       "fixed": 1
 
@@ -149,7 +149,7 @@
     "model": "Accounts.subheads",
     "pk": 12,
     "fields": {
-      "head": 4,
+      "head": 3,
       "name": "SALARIES & WAGES PAYABLE",
       "fixed": 1
 
@@ -169,7 +169,7 @@
     "model": "Accounts.subheads",
     "pk": 14,
     "fields": {
-      "head": 4,
+      "head": 3,
       "name": "INTERCOMPANY PAYABLES",
       "fixed": 1
 
@@ -179,7 +179,7 @@
     "model": "Accounts.subheads",
     "pk": 15,
     "fields": {
-      "head": 4,
+      "head": 3,
       "name": "OUTPUT GST",
       "fixed": 1
 
@@ -189,7 +189,7 @@
     "model": "Accounts.subheads",
     "pk": 16,
     "fields": {
-      "head": 3,
+      "head": 4,
       "name": "OWNER'S CAPITAL",
       "fixed": 1
 
@@ -199,7 +199,7 @@
     "model": "Accounts.subheads",
     "pk": 17,
     "fields": {
-      "head": 3,
+      "head": 4,
       "name": "RETAINED EARNINGS",
       "fixed": 1
 
@@ -209,7 +209,7 @@
     "model": "Accounts.subheads",
     "pk": 18,
     "fields": {
-      "head":4,
+      "head":3,
       "name": "DIVIDENDS",
       "fixed": 1
 
@@ -219,7 +219,7 @@
     "model": "Accounts.subheads",
     "pk": 19,
     "fields": {
-      "head": 3,
+      "head": 4,
       "name": "DRAWINGS",
       "fixed": 1
 
@@ -428,7 +428,7 @@
     "fields": {
       "subhead": 14,
       "name": "RENT",
-      "codes": "00004-000014-000011",
+      "codes": "00003-000014-000011",
       "fixed": 1,
       "left":0 ,
       "right":1
@@ -442,7 +442,7 @@
     "fields": {
       "subhead": 14,
       "name": "INTEREST",
-      "codes": "00004-000014-000012",
+      "codes": "00003-000014-000012",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -456,7 +456,7 @@
     "fields": {
       "subhead": 14,
       "name": "PROPERTY TAXES",
-      "codes": "00004-000014-000013",
+      "codes": "00003-000014-000013",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -470,7 +470,7 @@
     "fields": {
       "subhead": 16,
       "name": "OUTPUT SALES TAX",
-      "codes": "00004-000016-000014",
+      "codes": "00003-000016-000014",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -484,7 +484,7 @@
     "fields": {
       "subhead": 18,
       "name": "PROFIT/(LOSS) FOR THE YEAR",
-      "codes": "00003-000018-000015",
+      "codes": "00004-000018-000015",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -498,7 +498,7 @@
     "fields": {
       "subhead": 18,
       "name": "PROFIT/(LOSS) CARRIED FORWARD",
-      "codes": "00003-000018-000016",
+      "codes": "00004-000018-000016",
       "fixed": 1,
        "left":0 ,
       "right":1
@@ -512,7 +512,7 @@
     "fields": {
       "subhead": 19,
       "name": "DIVEDENDS FOR THE YEAR",
-      "codes": "00003-000019-000017",
+      "codes": "00004-000019-000017",
       "fixed": 1,
        "left":0 ,
       "right":1
