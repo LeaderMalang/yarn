@@ -17,10 +17,10 @@ def index(request):
 
 def subhead(request):
     assets=subheads.objects.filter(head=1)
-    equity=subheads.objects.filter(head=3)
-    liability=subheads.objects.filter(head=2)
+    equity=subheads.objects.filter(head=4)
+    liability=subheads.objects.filter(head=3)
     revenue=subheads.objects.filter(head=5)
-    expense=subheads.objects.filter(head=4)
+    expense=subheads.objects.filter(head=2)
 
     return render(request,'subhead.html',{"assets":assets,"equity":equity,"liability":liability,"revenue":revenue,"expense":expense})
 
@@ -35,7 +35,7 @@ def elementaryHead (request):
 
 def addAccount(request):
     form=AccountsForm()
-    form.fields['head'].choices=((0,'Select Head'),(1,'ASSETS'),(2,'LIABILITIES'),(3,'EQUITY'),(4,'EXPENSE'),(5,'REVENUE'))
+    form.fields['head'].choices=((0,'Select Head'),(1,'ASSETS'),(3,'LIABILITIES'),(4,'EQUITY'),(2,'EXPENSE'),(5,'REVENUE'))
 
 
     return render(request,'addAccounts.html',{'form':form})
