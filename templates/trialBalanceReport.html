@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content">
+
+			<div class="container-fluid">
+
+						<div class="row">
+									<div class="col-xl-12">
+											<div class="breadcrumb-holder">
+													<h1 class="main-title float-left">Trial Balances</h1>
+													<ol class="breadcrumb float-right">
+														<li class="breadcrumb-item">Trial Balances</li>
+														<li class="breadcrumb-item active">Dashboard</li>
+													</ol>
+													<div class="clearfix"></div>
+											</div>
+									</div>
+						</div>
+						<!-- end row -->
+                <div class="row">
+
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+							<div class="card mb-3">
+								<div class="card-header">
+									<h3><i class="fa fa-table"></i> Trial Balances </h3>
+
+								</div>
+
+								<div class="card-body">
+									<div class="table-responsive">
+									<table id="example1" class="table table-bordered table-hover display">
+										<thead>
+											<tr>
+												<th>Account</th>
+												<th>Debit</th>
+												<th>Credit</th>
+
+											</tr>
+										</thead>
+										<tbody>
+                                        {% for trialbalance in trialbalances %}
+											<tr>
+                                                <td>{{ trialbalance.0 }}</td>
+                                                <td>{% if trialbalance.1 == 0 %}
+                                                    {% else %}
+                                                    {{ trialbalance.1 }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{% if trialbalance.2 == 0 %}
+                                                    {% else %}
+                                                    {{ trialbalance.2 }}
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                            <tr>
+                                                <td><b>Totals</b></td>
+                                                <td>{{totalDebit }}</td>
+                                                <td>{{ totalCredit }}</td>
+                                            </tr>
+
+										</tbody>
+									</table>
+									</div>
+
+								</div>
+							</div><!-- end card-->
+						</div>
+
+
+				</div>
+
+
+
+
+
+            </div>
+			<!-- END container-fluid -->
+
+		</div>
+{% endblock %}

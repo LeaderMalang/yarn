@@ -6,9 +6,29 @@ from django.core import serializers
 from django.db.models import Sum
 from Accounts.forms import *
 from django.db import connection,transaction
+from .serializers import *
+from rest_framework import generics
 import datetime
 # Create your views here.
 
+class CreateView(generics.ListCreateAPIView):
+    """This class defines the create behavior of our rest api."""
+    queryset = heads.objects.all()
+    serializer_class = HeadsSerializer
+
+    def perform_create(self, serializer):
+        """Save the post data when creating a new bucketlist."""
+        serializer.save()
+
+
+class CreateViewSubhead(generics.ListCreateAPIView):
+    """This class defines the create behavior of our rest api."""
+    queryset = subheads.objects.all()
+    serializer_class = SubHeadSerializer
+
+    def perform_create(self, serializer):
+        """Save the post data when creating a new bucketlist."""
+        serializer.save()
 
 def index(request):
     allhead=heads.objects.all()
@@ -158,6 +178,36 @@ def accountBalance(request):
     bal=accounts.objects.select_related('elementary')
     print(bal)
     return render(request,'test2.html')
+
+def trialBalance(request):
+    return render(request,'trialBalance.html')
+
+def calTrailBalance(request):
+    start=request.GET.get('start')
+    end=request.GET.get('end')
+    trialBalances=accounts.objects.raw("SELECT id,elementary_id,(SUM(debit)-SUM(credit)) As res FROM `Accounts_accounts` where date BETWEEN '"+start+"' and  '"+end+"' GROUP By elementary_id")
+    dicttrailbalances=[]
+    totaldebit=0
+    totalcredit=0
+    for trialBalance in trialBalances:
+        acc=elementaryhead.objects.get(id=trialBalance.elementary_id)
+        if trialBalance.res>0:
+            # dicttrailbalances['credit'] =0
+            # dicttrailbalances['debit']=trialBalance.res
+            # dicttrailbalances['accountName']=acc
+            totaldebit=totaldebit+trialBalance.res
+            dicttrailbalances.append([acc,trialBalance.res,0])
+
+        elif trialBalance.res<0:
+            # dicttrailbalances['credit'] = trialBalance.res
+            # dicttrailbalances['debit'] = 0
+            # dicttrailbalances['accountName'] = acc
+            totalcredit=totalcredit+trialBalance.res
+            dicttrailbalances.append([acc,0,trialBalance.res])
+        print(acc,trialBalance.res)
+
+
+    return render(request,'trialBalanceReport.html',{'trialbalances':dicttrailbalances,'totalDebit':totaldebit,'totalCredit':totalcredit})
 
 
 

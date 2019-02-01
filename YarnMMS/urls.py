@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
 from Accounts import views
+from Accounts.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +31,8 @@ urlpatterns = [
     url(r'^journajVoucher/', views.journajVoucher, name='journajVoucher'),
     url(r'^savejournalVoucher/', views.savejournalVoucher, name='savejournalVoucher'),
     url(r'^accountBalances/', views.accountBalance, name='accountBalances'),
+    url(r'^restHead/$', CreateView.as_view(), name="create"),
+    url(r'^restSubHead/$', CreateViewSubhead.as_view(), name="createsubhead"),
+    url(r'^trialBalance/', views.trialBalance, name="trialBalance"),
+    url(r'^caltrialBalance/', views.calTrailBalance, name="caltrialBalance"),
 ]
