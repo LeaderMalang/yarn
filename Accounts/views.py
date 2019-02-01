@@ -192,22 +192,18 @@ def calTrailBalance(request):
     for trialBalance in trialBalances:
         acc=elementaryhead.objects.get(id=trialBalance.elementary_id)
         if trialBalance.res>0:
-            # dicttrailbalances['credit'] =0
-            # dicttrailbalances['debit']=trialBalance.res
-            # dicttrailbalances['accountName']=acc
             totaldebit=totaldebit+trialBalance.res
             dicttrailbalances.append([acc,trialBalance.res,0])
 
         elif trialBalance.res<0:
-            # dicttrailbalances['credit'] = trialBalance.res
-            # dicttrailbalances['debit'] = 0
-            # dicttrailbalances['accountName'] = acc
             totalcredit=totalcredit+trialBalance.res
             dicttrailbalances.append([acc,0,trialBalance.res])
         print(acc,trialBalance.res)
 
-
-    return render(request,'trialBalanceReport.html',{'trialbalances':dicttrailbalances,'totalDebit':totaldebit,'totalCredit':totalcredit})
+    if not dicttrailbalances:
+        raise ValueError("There is no Data for these dates")
+    else:
+        return render(request,'trialBalanceReport.html',{'trialbalances':dicttrailbalances,'totalDebit':totaldebit,'totalCredit':totalcredit})
 
 
 
