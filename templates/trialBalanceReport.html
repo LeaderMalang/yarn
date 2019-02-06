@@ -48,15 +48,19 @@
                                                 </td>
                                                 <td>{% if trialbalance.2 == 0 %}
                                                     {% else %}
-                                                    {{ trialbalance.2 }}
+                                                   {% widthratio trialbalance.2 1 -1 %}
                                                     {% endif %}
                                                 </td>
                                             </tr>
                                         {% endfor %}
                                             <tr>
                                                 <td><b>Totals</b></td>
-                                                <td>{{totalDebit }}</td>
-                                                <td>{{ totalCredit }}</td>
+                                                <td>{{totalDebit }}
+
+                                                </td>
+                                                <td>
+                                                {% widthratio totalCredit 1 -1 %}
+                                                </td>
                                             </tr>
 
 										</tbody>

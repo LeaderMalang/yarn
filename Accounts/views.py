@@ -9,8 +9,10 @@ from django.db import connection,transaction
 from .serializers import *
 from rest_framework import generics
 import datetime
-# Create your views here.
 
+
+
+# Rest API List and Save EndPoints for Head
 class CreateView(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
     queryset = heads.objects.all()
@@ -20,7 +22,7 @@ class CreateView(generics.ListCreateAPIView):
         """Save the post data when creating a new bucketlist."""
         serializer.save()
 
-
+# Rest API List and Save EndPoints for Sub Head
 class CreateViewSubhead(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
     queryset = subheads.objects.all()
@@ -29,12 +31,12 @@ class CreateViewSubhead(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
         serializer.save()
-
+#  List view  for Head
 def index(request):
     allhead=heads.objects.all()
     return  render(request, 'head.html',{'heads':allhead})
 
-
+#List View for SubHead
 def subhead(request):
     assets=subheads.objects.filter(head=1)
     equity=subheads.objects.filter(head=4)
@@ -198,7 +200,6 @@ def calTrailBalance(request):
         elif trialBalance.res<0:
             totalcredit=totalcredit+trialBalance.res
             dicttrailbalances.append([acc,0,trialBalance.res])
-        print(acc,trialBalance.res)
 
     if not dicttrailbalances:
         raise ValueError("There is no Data for these dates")
