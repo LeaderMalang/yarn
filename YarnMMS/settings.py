@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'Accounts.apps.AccountsConfig',
     'rest_framework',
     'django_countries',
-    'Purchase.apps.PurchaseConfig'
+    'Purchase.apps.PurchaseConfig',
+    'Inventory.apps.InventoryConfig'
 ]
 
 MIDDLEWARE = [
