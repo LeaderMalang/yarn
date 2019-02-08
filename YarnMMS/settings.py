@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Accounts.apps.AccountsConfig',
     'rest_framework',
+    'django_countries',
+    'Purchase.apps.PurchaseConfig'
 ]
 
 MIDDLEWARE = [

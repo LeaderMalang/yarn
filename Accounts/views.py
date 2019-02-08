@@ -207,5 +207,7 @@ def calTrailBalance(request):
         return render(request,'trialBalanceReport.html',{'trialbalances':dicttrailbalances,'totalDebit':totaldebit,'totalCredit':totalcredit})
 
 
-
+def cpVoucher(request):
+    form = TransactionItemFormset()
+    return  render(request,'cpVoucher.html',{'form':form})
 

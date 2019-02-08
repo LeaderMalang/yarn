@@ -8,10 +8,10 @@
 						<div class="row">
 									<div class="col-xl-12">
 											<div class="breadcrumb-holder">
-													<h1 class="main-title float-left">Dashboard</h1>
+													<h1 class="main-title float-left">Cash Payment Voucher</h1>
 													<ol class="breadcrumb float-right">
 														<li class="breadcrumb-item">Home</li>
-														<li class="breadcrumb-item active">Dashboard</li>
+														<li class="breadcrumb-item active">Cash Payment Voucher</li>
 													</ol>
 													<div class="clearfix"></div>
 											</div>
@@ -22,7 +22,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 						<div class="card mb-3">
 							<div class="card-header">
-								<h3><i class="fa fa-check-square-o"></i>Journal Voucher</h3>
+								<h3><i class="fa fa-check-square-o"></i>Cash Payment Voucher</h3>
 
 							</div>
 
@@ -46,7 +46,7 @@
                                     <div class="col-12 insertTrascationItems">
 
                                         {% for form in form %}
-                                        <div class="form-row trasactionItem">
+                                        <div class="form-row trasactionItem cpitems">
                                             <div class="form-group col-2"><label>Account</label>{{ form.elementary }}</div>
                                             <div class="form-group col-2"><label>Debit</label>{{ form.debit }}</div>
                                             <div class="form-group col-2"><label>Credit</label>{{ form.credit }}</div>
@@ -82,4 +82,6 @@
 
     </div>
 	<!-- END content-page -->
+
 {% endblock %}
+

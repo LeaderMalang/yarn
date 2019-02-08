@@ -35,4 +35,5 @@ urlpatterns = [
     url(r'^restSubHead/$', CreateViewSubhead.as_view(), name="createsubhead"),
     url(r'^trialBalance/', views.trialBalance, name="trialBalance"),
     url(r'^caltrialBalance/', views.calTrailBalance, name="caltrialBalance"),
+    url(r'^cpVoucher/', views.cpVoucher, name="cpVoucher"),
 ]

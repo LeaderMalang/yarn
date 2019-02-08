@@ -1,4 +1,5 @@
 from django.db import models
+from django_countries.fields import CountryField
 import datetime
 
 # Create your models here.
@@ -54,5 +55,7 @@ class accounts(models.Model):
 
     def __str__(self):
         return self.elementary
+
+
 
 
