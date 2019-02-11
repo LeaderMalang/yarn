@@ -31,8 +31,8 @@ class users(models.Model):
         subhead=15
         code = '00003-000015-0000' + str(accountID)
         elementaryhead.objects.create(subhead_id=subhead, name=self.companyName,fixed=False, codes=code, right=True)
-        self.supplier=True
-
+        self.supplier = True
+        self.buyer = False
         super(users,self).save()
 
     def __str__(self):
@@ -47,12 +47,15 @@ class Contacts(models.Model):
     suffix=models.CharField(max_length=10,verbose_name='Suffix')
     My_CHOICES=(('mr','MR'),('ms','MS'))
     title=models.CharField(max_length=10,verbose_name='Title',choices=My_CHOICES)
-    phone1=models.IntegerField(verbose_name='Phone')
-    phone2=models.IntegerField(verbose_name='Another Phone',default=None)
-    mobile1=models.IntegerField(verbose_name='Mobile')
-    mobile2=models.IntegerField(verbose_name='Another Mobile',default=None)
+    phone1=models.BigIntegerField(verbose_name='Phone')
+    phone2=models.BigIntegerField(verbose_name='Another Phone',default=None)
+    mobile1=models.BigIntegerField(verbose_name='Mobile')
+    mobile2=models.BigIntegerField(verbose_name='Another Mobile',default=None)
     email=models.EmailField()
     fax=models.IntegerField(default=None,verbose_name='Fax')
+
+    def __str__(self):
+        return self.userId
 
 
 
