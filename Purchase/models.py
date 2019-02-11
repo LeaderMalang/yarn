@@ -26,11 +26,11 @@ class users(models.Model):
         accountID = elementaryhead.objects.order_by('id').last().id + 1
         subhead=11
         code = '00003-000011-0000' + str(accountID)
-        elementaryhead.objects.create(subhead_id=subhead, name=self.companyName,fixed=False, codes=code, right=True)
+        elementaryhead.objects.create(subhead_id=subhead, name=self.companyName+'(I/TAX PAYABLE)',fixed=False, codes=code, right=True)
         accountID = elementaryhead.objects.order_by('id').last().id + 1
         subhead=15
         code = '00003-000015-0000' + str(accountID)
-        elementaryhead.objects.create(subhead_id=subhead, name=self.companyName,fixed=False, codes=code, right=True)
+        elementaryhead.objects.create(subhead_id=subhead, name=self.companyName+'(GST W/HELD PAYABLE)',fixed=False, codes=code, right=True)
         self.supplier = True
         self.buyer = False
         super(users,self).save()

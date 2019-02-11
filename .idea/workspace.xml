@@ -19,29 +19,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inventory/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="42" column="34" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="34" />
+            <state relative-caret-position="365">
+              <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YarnMMS/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Purchase/models.py">
+        <entry file="file://$PROJECT_DIR$/Accounts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="360">
+              <caret line="27" column="9" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="9" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -50,24 +41,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Purchase/admin.py">
+        <entry file="file://$PROJECT_DIR$/Accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            <state relative-caret-position="164">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
+        <entry file="file://$PROJECT_DIR$/Purchase/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="570">
+              <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,7 +118,6 @@
         <option value="$PROJECT_DIR$/templates/trialBalanceReport.html" />
         <option value="$PROJECT_DIR$/YarnMMS/urls.py" />
         <option value="$PROJECT_DIR$/templates/sidebar.html" />
-        <option value="$PROJECT_DIR$/Accounts/views.py" />
         <option value="$PROJECT_DIR$/Accounts/forms.py" />
         <option value="$PROJECT_DIR$/templates/journalVoucher.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
@@ -135,9 +125,10 @@
         <option value="$PROJECT_DIR$/Accounts/models.py" />
         <option value="$PROJECT_DIR$/Accounts/admin.py" />
         <option value="$PROJECT_DIR$/Inventory/admin.py" />
-        <option value="$PROJECT_DIR$/Inventory/models.py" />
         <option value="$PROJECT_DIR$/YarnMMS/settings.py" />
         <option value="$PROJECT_DIR$/Purchase/admin.py" />
+        <option value="$PROJECT_DIR$/Accounts/views.py" />
+        <option value="$PROJECT_DIR$/Inventory/models.py" />
         <option value="$PROJECT_DIR$/Purchase/models.py" />
       </list>
     </option>
@@ -182,7 +173,7 @@
             <path>
               <item name="YarnMMS" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="YarnMMS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Accounts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -262,7 +253,7 @@
       <workItem from="1549429474533" duration="6765000" />
       <workItem from="1549514792084" duration="8450000" />
       <workItem from="1549602900647" duration="8996000" />
-      <workItem from="1549861927867" duration="2599000" />
+      <workItem from="1549861927867" duration="6519000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -306,11 +297,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549626227191</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tested and removed bugs from Suppliers,Company and company Contacts models.">
+      <created>1549865522366</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549865522366</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149758000" />
+    <option name="totallyTimeSpent" value="153678000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,15 +321,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1280" height="926" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30551052" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30551052" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32916147" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39899623" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39899623" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32998747" />
@@ -421,7 +420,8 @@
     <MESSAGE value="this is" />
     <MESSAGE value="Added Purchase module. &#10;Added Users ,brand and Count models." />
     <MESSAGE value="Added inventory Products ,brand and count.&#10;Added Purchase Suppliers and Contacts of Suppliers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added inventory Products ,brand and count.&#10;Added Purchase Suppliers and Contacts of Suppliers" />
+    <MESSAGE value="tested and removed bugs from Suppliers,Company and company Contacts models." />
+    <option name="LAST_COMMIT_MESSAGE" value="tested and removed bugs from Suppliers,Company and company Contacts models." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -719,40 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YarnMMS/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -773,10 +739,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/YarnMMS/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Purchase/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="570">
+          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="9" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
