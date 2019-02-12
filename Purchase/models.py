@@ -75,6 +75,9 @@ class contracts(models.Model):
     paymentDays=models.IntegerField(verbose_name='Payment Days',default=None)
     remarks=models.CharField(verbose_name='Remarks',max_length=100,default=None)
     dateOfEntry=models.DateField(editable=False,default=datetime.now())
+    def __str__(self):
+        return self.productDetailID
+
 
 
 
@@ -86,6 +89,8 @@ class contractDetails(models.Model):
     weightPerCone=models.IntegerField(verbose_name='Weight Per Cone')
     noOfBags=models.IntegerField(verbose_name='No of Bags')
     noOfAdditional=models.IntegerField(verbose_name='No of Additional Cones')
+    def __str__(self):
+        return self.contractID
 
 
 

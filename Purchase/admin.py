@@ -9,7 +9,7 @@ admin.site.register(suppliers)
 admin.site.register(Contacts)
 class contractDetailsInline(admin.TabularInline):
     model = contractDetails
-    extra = 0
+    extra = 1
     fields = ["weightPerBag", "conesPerBag", "weightPerCone", 'noOfBags','noOfAdditional']
 
 class contractsAdmin(admin.ModelAdmin):
