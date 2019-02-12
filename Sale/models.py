@@ -1,9 +1,9 @@
 from django.db import models
-from Purchase.models import users
+from Purchase.models import suppliers
 from Accounts.models import *
 # Create your models here.
 
-class customers(users):
+class customers(suppliers):
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
@@ -21,4 +21,4 @@ class customers(users):
         elementaryhead.objects.create(subhead_id=subhead, name=self.companyName+'(GST W/HELD PAYABLE)',fixed=False, codes=code, right=True)
         self.supplier = True
         self.buyer = False
-        super(users,self).save()
+        super(customers,self).save()

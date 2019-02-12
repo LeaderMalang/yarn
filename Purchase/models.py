@@ -1,9 +1,11 @@
 from django.db import models
 from django_countries.fields import CountryField
 from Accounts.models import elementaryhead
+from Inventory.models import productDetails
+from datetime import datetime
 
 # Create your models here.
-class users(models.Model):
+class suppliers(models.Model):
     companyName=models.CharField(max_length=30,verbose_name='Company Name')
     companyAddress=models.CharField(max_length=50,verbose_name='Company Address')
     city=models.CharField(max_length=20,verbose_name='City')
@@ -33,7 +35,7 @@ class users(models.Model):
         elementaryhead.objects.create(subhead_id=subhead, name=self.companyName+'(GST W/HELD PAYABLE)',fixed=False, codes=code, right=True)
         self.supplier = True
         self.buyer = False
-        super(users,self).save()
+        super(suppliers,self).save()
 
     def __str__(self):
         return self.companyName
@@ -41,7 +43,7 @@ class users(models.Model):
 
 
 class Contacts(models.Model):
-    userId=models.ForeignKey(users,on_delete=models.CASCADE,verbose_name='Company')
+    supplierID=models.ForeignKey(suppliers,on_delete=models.CASCADE,verbose_name='Company')
     firstName=models.CharField(max_length=35,verbose_name='First Name')
     lastName=models.CharField(max_length=35,verbose_name='Last Name')
     suffix=models.CharField(max_length=10,verbose_name='Suffix')
@@ -55,10 +57,35 @@ class Contacts(models.Model):
     fax=models.IntegerField(default=None,verbose_name='Fax')
 
     def __str__(self):
-        return self.userId
+        return self.supplierID
 
 
 
 class contracts(models.Model):
-    pass
+    productDetailID=models.ForeignKey(productDetails,on_delete=models.CASCADE,verbose_name='Select Product',default=None)
+    supplierID=models.ForeignKey(suppliers,on_delete=models.CASCADE,verbose_name='Select Supplier',default=None)
+    totalUnits=models.IntegerField(verbose_name='Total Units',editable=False,default=None)
+    ratePerUnit=models.IntegerField(verbose_name='Rate Per Unit',default=None)
+    saleTax=models.IntegerField(verbose_name='Sale Tax',default=None)
+    incomeTax=models.IntegerField(verbose_name='Income Tax',default=None)
+    saleTaxwithHeld=models.IntegerField(verbose_name='Sale Tax with Held',default=None)
+    startDate=models.DateField(verbose_name='Start Date',default=None)
+    endDate=models.DateField(verbose_name='End Date',default=None)
+    manulContractNumber=models.IntegerField(verbose_name='Manul Contract Number',default=None)
+    paymentDays=models.IntegerField(verbose_name='Payment Days',default=None)
+    remarks=models.CharField(verbose_name='Remarks',max_length=100,default=None)
+    dateOfEntry=models.DateField(editable=False,default=datetime.now())
+
+
+
+
+class contractDetails(models.Model):
+    contractID=models.ForeignKey(contracts,on_delete=models.CASCADE,verbose_name='Select Contract')
+    weightPerBag=models.IntegerField(verbose_name='Weight Per Bag')
+    conesPerBag=models.IntegerField(verbose_name='Cones Per Bag')
+    weightPerCone=models.IntegerField(verbose_name='Weight Per Cone')
+    noOfBags=models.IntegerField(verbose_name='No of Bags')
+    noOfAdditional=models.IntegerField(verbose_name='No of Additional Cones')
+
+
 
