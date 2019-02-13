@@ -1,6 +1,7 @@
 from django.db import models
-from django_countries.fields import CountryField
-import datetime
+# from Purchase.models import contracts
+
+from _datetime import datetime
 
 # Create your models here.
 def currency_display(amount):
@@ -49,12 +50,52 @@ class accounts(models.Model):
     balance=models.IntegerField()
     date=models.DateField(format('YY-MM-DD'))
     voucherFlag=models.BooleanField(default=False)
-    dateTime=models.DateTimeField(default=datetime.datetime.now())
+    dateTime=models.DateTimeField(default=datetime.now())
 
 
 
     def __str__(self):
         return self.elementary
+
+
+# class paymentOut(models.Model):
+#     purchaseContractID=models.ForeignKey(contracts,on_delete=models.CASCADE,verbose_name='Purchase Contract')
+#     accountID=models.ForeignKey(elementaryhead,on_delete=models.CASCADE,editable=False)
+#     chequeNo=models.IntegerField(verbose_name='Cheque No',max_length=20)
+#     chequeImage=models.ImageField(upload_to='assets/images/%Y/%m/%d',verbose_name='Cheque Image')
+#     depositNo=models.IntegerField(max_length=20,verbose_name='Deposit No')
+#     depositImage=models.ImageField(upload_to='assets/images/%Y/%m/%d')
+#     totalunits=models.IntegerField(verbose_name='Total Units')
+#     dateOfentry=models.DateField(default=datetime.datetime.now())
+#     def __str__(self):
+#         return self.accountID
+#
+#
+# class paymentOutDetails(models.Model):
+#     paymentOutID=models.ForeignKey(paymentOut,on_delete=models.CASCADE)
+#     noOfBags=models.IntegerField()
+#     noOfAdditionalCone=models.IntegerField()
+
+
+
+# class paymentIn(models.Model):
+#     saleContractID=models.ForeignKey(contracts,on_delete=models.CASCADE,verbose_name='Sale Contract')
+#     accountID=models.ForeignKey(elementaryhead,on_delete=models.CASCADE,editable=False)
+#     chequeNo=models.IntegerField(verbose_name='Cheque No',max_length=20)
+#     chequeImage=models.ImageField(upload_to='assets/images/%Y/%m/%d',verbose_name='Cheque Image')
+#     depositNo=models.IntegerField(max_length=20,verbose_name='Deposit No')
+#     depositImage=models.ImageField(upload_to='assets/images/%Y/%m/%d')
+#     totalunits=models.IntegerField(verbose_name='Total Units')
+#     dateOfentry=models.DateField(default=datetime.datetime.now())
+#     def __str__(self):
+#         return self.accountID
+#
+#
+# class paymentInDetails(models.Model):
+#     paymentOutID=models.ForeignKey(paymentOut,on_delete=models.CASCADE)
+#     noOfBags=models.IntegerField()
+#     noOfAdditionalCone=models.IntegerField()
+
 
 
 

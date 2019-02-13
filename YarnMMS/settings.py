@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_countries',
     'Purchase.apps.PurchaseConfig',
-    'Inventory.apps.InventoryConfig'
+    'Inventory.apps.InventoryConfig',
+    'Sale.apps.SaleConfig'
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+MEDIA_ROOT = '/assets/image'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_URL = '/assets/'

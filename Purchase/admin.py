@@ -7,6 +7,8 @@ from Purchase.models import suppliers,Contacts,contracts,contractDetails
 
 admin.site.register(suppliers)
 admin.site.register(Contacts)
+
+
 class contractDetailsInline(admin.TabularInline):
     model = contractDetails
     extra = 1

@@ -1,5 +1,9 @@
 from django.db import models
-from Purchase.models import *
+
+
+
+
+from datetime import datetime
 
 # Create your models here.
 class counts(models.Model):
@@ -27,6 +31,7 @@ class productDetails(models.Model):
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
+        from Accounts.models import elementaryhead
         accountID = elementaryhead.objects.order_by('id').last().id + 1
         code = '00003-00003-000' + str(accountID)
         subhead = 3
@@ -41,3 +46,48 @@ class productDetails(models.Model):
         elementaryhead.objects.create(subhead_id=subhead, name='REVENUE ('+self.name+')', fixed=False, codes=code, right=True)
 
         super(productDetails, self).save()
+
+class products(models.Model):
+    productDetailsID=models.ForeignKey(productDetails,on_delete=models.CASCADE)
+    startingInventory=models.IntegerField(verbose_name='Starting Inventory')
+    startingPrice=models.IntegerField(verbose_name='Starting Price')
+    inventoryReceived=models.IntegerField(verbose_name='Inventory Received')
+    inventoryShipped=models.IntegerField(verbose_name='Inventory Shipped')
+    currentInventory=models.IntegerField(verbose_name='Current Inventory')
+    currentPrice=models.IntegerField(verbose_name='Current Price')
+    minimumRequired=models.IntegerField(verbose_name='Minimum Required')
+    dateModified=models.DateTimeField(default=datetime.now())
+
+
+# class inventoryIn(models.Model):
+#     from Purchase.models import suppliers,contracts
+#     supplierID=models.ForeignKey(suppliers,on_delete=models.CASCADE,verbose_name='Supplier')
+#     productID=models.ForeignKey(products,on_delete=models.CASCADE)
+#     purchaseContractID=models.ForeignKey(contracts,on_delete=models.CASCADE)
+#     unitsIn=models.IntegerField(verbose_name='Units In')
+#     doID=models.IntegerField(verbose_name='Do ID')
+#     doImage=models.ImageField(upload_to='/assets/image')
+#     invoiceID=models.IntegerField(verbose_name='Invoice ID')
+#     invoiceImage=models.ImageField(upload_to='/assets/image')
+#     agingDate=models.DateField()
+#     dateOfEntry=models.DateField(default=datetime.now())
+#     def __str__(self):
+#         return self.supplierID
+#
+#
+# class inventoryOut(models.Model):
+#     from Sale.models import customers, contracts
+#     customerID = models.ForeignKey(customers, on_delete=models.CASCADE, verbose_name='Supplier')
+#     productID = models.ForeignKey(products, on_delete=models.CASCADE)
+#     saleContractID = models.ForeignKey(contracts, on_delete=models.CASCADE)
+#     unitsIn = models.IntegerField(verbose_name='Units In')
+#     doID = models.IntegerField(verbose_name='Do ID')
+#     doImage = models.ImageField(upload_to='/assets/image')
+#     invoiceID = models.IntegerField(verbose_name='Invoice ID')
+#     invoiceImage = models.ImageField(upload_to='/assets/image')
+#     agingDate = models.DateField()
+#     dateOfEntry = models.DateField(default=datetime.now())
+#
+#     def __str__(self):
+#         return self.customerID
+
