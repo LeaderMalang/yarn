@@ -28,6 +28,9 @@ class productDetails(models.Model):
     partNumber=models.CharField(max_length=50,default=None,verbose_name='Part Number')
     brand = models.ForeignKey(brands, on_delete=models.CASCADE, verbose_name='Brand')
     count = models.ForeignKey(counts, on_delete=models.CASCADE, verbose_name='Count')
+    addInventory = models.BooleanField(blank=True, default=False,
+                                       verbose_name='Do you want to add starting Inventory for this product')
+
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
