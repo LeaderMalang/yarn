@@ -1,7 +1,7 @@
 from django.db import models
 from django_countries.fields import CountryField
 
-from Inventory.models import productDetails,products
+
 from Accounts.models import elementaryhead
 from datetime import datetime
 import base64
@@ -64,9 +64,7 @@ class Contacts(models.Model):
 
 
 class contracts(models.Model):
-
-
-    productDetailID=models.ForeignKey(productDetails,related_name='+',on_delete=models.CASCADE,verbose_name='Select Product',default=None)
+    productDetailID=models.ForeignKey('Inventory.productDetails',related_name='+',on_delete=models.CASCADE,verbose_name='Select Product',default=None)
     supplierID=models.ForeignKey(suppliers,on_delete=models.CASCADE,verbose_name='Select Supplier',default=None)
     totalUnits=models.IntegerField(verbose_name='Total Units',editable=False,default=None)
     ratePerUnit=models.IntegerField(verbose_name='Rate Per Unit',default=None)

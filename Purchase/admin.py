@@ -17,7 +17,7 @@ class contractDetailsInline(admin.TabularInline):
 
 class contractsAdmin(admin.ModelAdmin):
     save_on_top = True
-    fields = ["productDetailID",'supplierID','saleTax','incomeTax','ratePerUnit','saleTaxwithHeld','startDate','endDate','manulContractNumber','paymentDays','remarks','addInventory']
+    fields = ["productDetailID",'supplierID','saleTax','incomeTax','ratePerUnit','saleTaxwithHeld','startDate','endDate','manulContractNumber','paymentDays','remarks']
     inlines = [contractDetailsInline,]
 
     def save_model(self, request, obj, form, change):

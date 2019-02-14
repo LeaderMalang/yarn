@@ -1,9 +1,6 @@
 from django.db import models
-
-
-
-
 from datetime import datetime
+
 
 # Create your models here.
 class counts(models.Model):
@@ -62,22 +59,24 @@ class products(models.Model):
     dateModified=models.DateTimeField(default=datetime.now())
 
 
-# class inventoryIn(models.Model):
-#     from Purchase.models import suppliers,contracts
-#     supplierID=models.ForeignKey(suppliers,on_delete=models.CASCADE,verbose_name='Supplier')
-#     productID=models.ForeignKey(products,on_delete=models.CASCADE)
-#     purchaseContractID=models.ForeignKey(contracts,on_delete=models.CASCADE)
-#     unitsIn=models.IntegerField(verbose_name='Units In')
-#     doID=models.IntegerField(verbose_name='Do ID')
-#     doImage=models.ImageField(upload_to='/assets/image')
-#     invoiceID=models.IntegerField(verbose_name='Invoice ID')
-#     invoiceImage=models.ImageField(upload_to='/assets/image')
-#     agingDate=models.DateField()
-#     dateOfEntry=models.DateField(default=datetime.now())
-#     def __str__(self):
-#         return self.supplierID
-#
-#
+class inventoryIn(models.Model):
+
+
+    supplierID=models.ForeignKey('Purchase.suppliers',on_delete=models.CASCADE,verbose_name='Supplier')
+    productID=models.ForeignKey(products,on_delete=models.CASCADE)
+    purchaseContractID=models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE)
+    unitsIn=models.IntegerField(verbose_name='Units In')
+    doID=models.IntegerField(verbose_name='Do ID')
+    doImage=models.ImageField(upload_to='inventoryIn/%Y/%m/%d')
+    invoiceID=models.IntegerField(verbose_name='Invoice ID')
+    invoiceImage=models.ImageField(upload_to='inventoryIn/%Y/%m/%d')
+    agingDate=models.DateField()
+    dateOfEntry=models.DateField(default=datetime.now())
+    def __str__(self):
+        return self.supplierID
+
+
+
 # class inventoryOut(models.Model):
 #     from Sale.models import customers, contracts
 #     customerID = models.ForeignKey(customers, on_delete=models.CASCADE, verbose_name='Supplier')

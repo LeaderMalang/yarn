@@ -16,7 +16,7 @@ class productDetailsAdmin(admin.ModelAdmin):
         pdID=productDetails.objects.last()
         products.objects.create(productDetailsID=pdID,startingInventory=startinginventory,startingPrice=startingprice
                                 ,inventoryReceived=0,inventoryShipped=0,currentInventory=startinginventory,currentPrice=startingprice,minimumRequired=0)
-        print(pdID)
+
 
 
 admin.site.register(productDetails,productDetailsAdmin)
