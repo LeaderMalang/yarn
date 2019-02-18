@@ -1,5 +1,6 @@
 from django.contrib import admin
-from Inventory.models import counts,brands,productDetails,products
+from Inventory.models import counts,brands,productDetails,products,AddInventory
+
 # Register your models here.
 admin.site.register(counts)
 admin.site.register(brands)
@@ -17,6 +18,16 @@ class productDetailsAdmin(admin.ModelAdmin):
         products.objects.create(productDetailsID=pdID,startingInventory=startinginventory,startingPrice=startingprice
                                 ,inventoryReceived=0,inventoryShipped=0,currentInventory=startinginventory,currentPrice=startingprice,minimumRequired=0)
 
+
+class AddInventoryAdmin(admin.ModelAdmin):
+    fields = ['contractID',]
+
+    class Media:
+        js = ('js/addInventory.js',)
+
+
+
+admin.site.register(AddInventory,AddInventoryAdmin)
 
 
 admin.site.register(productDetails,productDetailsAdmin)

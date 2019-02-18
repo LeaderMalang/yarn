@@ -46,6 +46,8 @@ class productDetails(models.Model):
         elementaryhead.objects.create(subhead_id=subhead, name='REVENUE ('+self.name+')', fixed=False, codes=code, right=True)
 
         super(productDetails, self).save()
+    def __str__(self):
+        return self.name
 
 class products(models.Model):
     productDetailsID=models.ForeignKey(productDetails,on_delete=models.CASCADE)
@@ -92,4 +94,18 @@ class inventoryIn(models.Model):
 #
 #     def __str__(self):
 #         return self.customerID
+
+class AddInventory(models.Model):
+    contractID = models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE,default=None)
+
+
+
+    def __str__(self):
+
+        return 'Contract={0}'.format(self.contractID)
+
+
+
+
+
 

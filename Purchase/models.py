@@ -79,7 +79,7 @@ class contracts(models.Model):
     dateOfEntry=models.DateField(editable=False,default=datetime.now())
 
     def __str__(self):
-        return self.productDetailID
+        return str(self.productDetailID.name)
 
 
 
@@ -93,7 +93,7 @@ class contractDetails(models.Model):
     noOfBags=models.IntegerField(verbose_name='No of Bags')
     noOfAdditional=models.IntegerField(verbose_name='No of Additional Cones')
     def __str__(self):
-        return self.contractID
+        return str(self.contractID)
 
 
 

@@ -2,6 +2,7 @@
 
 
     $(document).ready(function () {
+        //add starting inventory Function
         $('#id_addInventory').click(function () {
             startinginventory='<div class="form-row field-startinginventory">\n' +
                    '            \n' +
@@ -41,6 +42,7 @@
                $('.field-startingprice').remove()
            }
         });
+
     });
 
 
