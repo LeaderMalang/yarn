@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be44294f-1a27-4a43-aa13-e49cf82db611" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Purchase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purchase/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarnMMS/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/YarnMMS/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarnMMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/YarnMMS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YarnMMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/YarnMMS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +23,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Purchase/models.py">
+        <entry file="file://$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="93" column="18" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="18" />
+            <state relative-caret-position="210">
+              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="68" column="22" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="22" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -38,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="343">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -47,32 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inventory/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Accounts/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="69" />
+            <state relative-caret-position="285">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -100,6 +87,7 @@
       <find>INPUT SALES TAX</find>
       <find>crea5</find>
       <find>objects.crea</find>
+      <find>upload</find>
     </findStrings>
     <replaceStrings>
       <replace>1</replace>
@@ -148,14 +136,14 @@
         <option value="$PROJECT_DIR$/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
         <option value="$PROJECT_DIR$/Purchase/admin.py" />
-        <option value="$PROJECT_DIR$/YarnMMS/settings.py" />
         <option value="$PROJECT_DIR$/Accounts/models.py" />
-        <option value="$PROJECT_DIR$/Inventory/admin.py" />
         <option value="$PROJECT_DIR$/YarnMMS/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/YarnMMS/urls.py" />
         <option value="$PROJECT_DIR$/Purchase/models.py" />
         <option value="$PROJECT_DIR$/Inventory/models.py" />
-        <option value="$PROJECT_DIR$/YarnMMS/urls.py" />
+        <option value="$PROJECT_DIR$/YarnMMS/settings.py" />
         <option value="$PROJECT_DIR$/Inventory/views.py" />
+        <option value="$PROJECT_DIR$/Inventory/admin.py" />
         <option value="$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js" />
       </list>
     </option>
@@ -174,27 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Purchase" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="YarnMMS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +173,27 @@
               <item name="YarnMMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="YarnMMS" type="462c0819:PsiDirectoryNode" />
               <item name="YarnMMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Inventory" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="YarnMMS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -290,7 +278,8 @@
       <workItem from="1550033227607" duration="11998000" />
       <workItem from="1550120591045" duration="16558000" />
       <workItem from="1550465853640" duration="838000" />
-      <workItem from="1550467613005" duration="15242000" />
+      <workItem from="1550467613005" duration="17254000" />
+      <workItem from="1550552229291" duration="14336000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -376,11 +365,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550142541488</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implementing AddInventory logic.">
+      <created>1550490215596</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1550490215597</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211758000" />
+    <option name="totallyTimeSpent" value="228106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -402,7 +398,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32998747" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32916147" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49918962" visible="true" weight="0.4629862" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49918962" visible="true" weight="0.4629862" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32998747" />
@@ -473,10 +469,28 @@
     <MESSAGE value="added Customers ,Sales Contract and contract Details" />
     <MESSAGE value="Added Modification reqired at Product Details." />
     <MESSAGE value="Added InventoryIn Model." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added InventoryIn Model." />
+    <MESSAGE value="Implementing AddInventory logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing AddInventory logic." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Inventory/admin.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Inventory/views.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Inventory/views.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -734,16 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sale/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -759,23 +763,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YarnMMS/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="132" column="23" lean-forward="true" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -837,23 +824,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
+    <entry file="file://$PROJECT_DIR$/Sale/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="368">
+          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="104" column="53" lean-forward="true" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
+        <state relative-caret-position="251">
+          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YarnMMS/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -869,28 +863,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Purchase/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="93" column="18" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="18" />
+        <state relative-caret-position="1005">
+          <caret line="67" column="14" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="14" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js">
+    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        <state relative-caret-position="165">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

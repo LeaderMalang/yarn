@@ -20,10 +20,15 @@ class productDetailsAdmin(admin.ModelAdmin):
 
 
 class AddInventoryAdmin(admin.ModelAdmin):
-    fields = ['contractID',]
+    fields = ['purchaseContractID','unitsIn','doType','doID','doImage','invoiceID','invoiceImage','agingDate','labReportImage','enterPaymentDays']
 
     class Media:
         js = ('js/addInventory.js',)
+
+    def save_model(self, request, obj, form, change):
+        supplierID_id=int(request.get('supplierID_id'))
+        form.save()
+
 
 
 

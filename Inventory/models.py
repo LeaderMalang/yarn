@@ -66,13 +66,17 @@ class inventoryIn(models.Model):
 
     supplierID=models.ForeignKey('Purchase.suppliers',on_delete=models.CASCADE,verbose_name='Supplier')
     productID=models.ForeignKey(products,on_delete=models.CASCADE)
-    purchaseContractID=models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE)
-    unitsIn=models.IntegerField(verbose_name='Units In')
-    doID=models.IntegerField(verbose_name='Do ID')
-    doImage=models.ImageField(upload_to='inventoryIn/%Y/%m/%d')
-    invoiceID=models.IntegerField(verbose_name='Invoice ID')
+    purchaseContractID=models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE,verbose_name='Contract ID')
+    unitsIn=models.IntegerField(verbose_name='Enter No of Bags')
+    MYCHOCIES = (('orginal', 'ORGINAL'), ('dummy', 'DUMMY'))
+    doType = models.CharField(blank=True, choices=MYCHOCIES, verbose_name='Select DO Type', max_length=20)
+    doID=models.IntegerField(verbose_name='Do No')
+    doImage=models.ImageField(upload_to='doImage/%Y/%m/%d',verbose_name='Do Image')
+    invoiceID=models.IntegerField(verbose_name='Invoice No')
     invoiceImage=models.ImageField(upload_to='inventoryIn/%Y/%m/%d')
-    agingDate=models.DateField()
+    agingDate=models.DateField(verbose_name='Receiving Date')
+    labReportImage = models.ImageField(upload_to='labReportImage/%Y/%m/%d', blank=True,verbose_name='Lab Report Image')
+    enterPaymentDays = models.IntegerField(verbose_name='Enter Payment Days', blank=True, default=None)
     dateOfEntry=models.DateField(default=datetime.now())
     def __str__(self):
         return self.supplierID
@@ -95,14 +99,19 @@ class inventoryIn(models.Model):
 #     def __str__(self):
 #         return self.customerID
 
-class AddInventory(models.Model):
-    contractID = models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE,default=None)
+class AddInventory(inventoryIn):
+
+
+
+
+    class Meta:
+        proxy = True
 
 
 
     def __str__(self):
 
-        return 'Contract={0}'.format(self.contractID)
+        return 'Contract={0}'.format(self.purchaseContractID)
 
 
 
