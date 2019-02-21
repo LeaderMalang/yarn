@@ -64,8 +64,8 @@ class products(models.Model):
 class inventoryIn(models.Model):
 
 
-    supplierID=models.ForeignKey('Purchase.suppliers',on_delete=models.CASCADE,verbose_name='Supplier')
-    productID=models.ForeignKey(products,on_delete=models.CASCADE)
+    supplierID=models.ForeignKey('Purchase.suppliers',editable=False,on_delete=models.CASCADE,verbose_name='Supplier')
+    productID=models.ForeignKey(products,editable=False,on_delete=models.CASCADE)
     purchaseContractID=models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE,verbose_name='Contract ID')
     unitsIn=models.IntegerField(verbose_name='Enter No of Bags')
     MYCHOCIES = (('orginal', 'ORGINAL'), ('dummy', 'DUMMY'))
@@ -79,7 +79,105 @@ class inventoryIn(models.Model):
     enterPaymentDays = models.IntegerField(verbose_name='Enter Payment Days', blank=True, default=None)
     dateOfEntry=models.DateField(default=datetime.now())
     def __str__(self):
-        return self.supplierID
+        return str(self.supplierID)
+
+    def createJournalEntry(self,AccountObject,amount):
+        from Accounts.models import voucher, accounts
+        journalVoucher = voucher.objects.create(name='')
+        voucherId=voucher.objects.latest('id')
+        if AccountObject[0].get('left'):
+          lastbalance=accounts.objects.values('balance').filter(id=AccountObject[0].get('id'))
+          accounts.objects.create(elementary=AccountObject[0].get('id'),debit=amount,credit=0,balance=lastbalance[0].balance+amount,voucherType='JournalVoucher',voucherID=voucherId)
+
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        from Purchase.models import contracts,suppliers,contractDetails
+        from Accounts.models import elementaryhead,voucher,accounts
+        contract = contracts.objects.values('supplierID', 'productDetailID','ratePerUnit','saleTax','incomeTax','saleTaxwithHeld').filter(id=self.purchaseContractID.id)
+        supplier=contract[0].get("supplierID")
+        product=contract[0].get("productDetailID")
+        productName=productDetails.objects.values('name',).filter(id=product)
+        supplierName=suppliers.objects.values('companyName').filter(id=supplier)
+        productNameString='CURRENT STOCK('+productName[0].get('name')+')'
+        productAccountIDs=elementaryhead.objects.values('id','right','left').filter(name__contains=productNameString)
+        supplierAccountIDs=elementaryhead.objects.values('id','right','left').filter(name__contains=supplierName[0].get('companyName'),subhead=10)
+        currentStockValue=contract[0].get("ratePerUnit")*self.unitsIn
+        totalSaleTax=currentStockValue*(contract[0].get("saleTax")/100)
+        accountPayable=currentStockValue+totalSaleTax
+
+
+        #product Stock Journal Entry
+
+
+        journalVoucher = voucher.objects.create(name='')
+        voucherId = voucher.objects.latest('id')
+        lastbalance = accounts.objects.values('balance').filter(id=productAccountIDs[0].get('id'))
+        currentLastBalance=0
+        if lastbalance :
+            currentLastBalance=lastbalance[0].balance -currentStockValue
+        else:
+            currentLastBalance=currentStockValue
+        elementaryInstance=elementaryhead.objects.get(id=productAccountIDs[0].get('id'))
+        accounts.objects.create(elementary=elementaryInstance, debit=currentStockValue, credit=0,
+                                balance=currentLastBalance, voucherType='JournalVoucher',
+                                voucherID=voucherId,date=self.agingDate)
+        lastbalanceSaleTax=accounts.objects.values('balance').filter(id=9)
+        currentLastBalanceSaleTax=0
+        if lastbalanceSaleTax:
+            currentLastBalanceSaleTax=lastbalanceSaleTax[0].get('balance')+totalSaleTax
+        else:
+            currentLastBalanceSaleTax=totalSaleTax
+        elementaryInstanceSaleTax=elementaryhead.objects.get(id=9)
+        accounts.objects.create(elementary=elementaryInstanceSaleTax, debit=totalSaleTax, credit=0,
+                                balance=currentLastBalanceSaleTax, voucherType='JournalVoucher',
+                                voucherID=voucherId, date=self.agingDate)
+
+        lastbalanceAccountsPayable=accounts.objects.values('balance').filter(id=supplierAccountIDs[0].get('id'))
+        currentLastBalanceAccountsPayable=0
+        if lastbalanceAccountsPayable:
+            currentLastBalanceAccountsPayable=lastbalanceAccountsPayable[0].get('balance')+accountPayable
+        else:
+            currentLastBalanceAccountsPayable=accountPayable
+
+
+        elementaryInstanceAccountPayable=elementaryhead.objects.get(id=supplierAccountIDs[0].get('id'))
+        accounts.objects.create(elementary=elementaryInstanceAccountPayable, debit=0, credit=accountPayable,
+                                balance=currentLastBalanceAccountsPayable, voucherType='JournalVoucher',
+                                voucherID=voucherId, date=self.agingDate)
+
+#creating product Inventory Details
+        productInventory=products.objects.filter(productDetailsID=product)
+        contractDetail= contractDetails.objects.filter(contractID=self.purchaseContractID.id)
+        productDetailInstance = productDetails.objects.get(id=product)
+        currentPrice = currentStockValue / self.unitsIn
+        if productInventory:
+            currentInventory=productInventory[0].get('startingInventory')+productInventory[0].get('inventoryReceived')-productInventory[0].get('inventoryShipped')
+
+            products.objects.create(productDetailsID=productDetailInstance,startingInventory=contractDetail[0].noOfBags
+                                    ,inventoryReceived=self.unitsIn,inventoryShipped=0,currentInventory=currentInventory,currentPrice=currentPrice,minimumRequired=0)
+        else:
+            products.objects.create(productDetailsID=productDetailInstance, startingInventory=contractDetail[0].noOfBags
+                                    , inventoryReceived=self.unitsIn, inventoryShipped=0,
+                                    currentInventory=self.unitsIn,startingPrice=currentPrice, currentPrice=currentPrice, minimumRequired=0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        self.supplierID=suppliers.objects.get(id=supplier)
+        self.productID=products.objects.get(productDetailsID=product)
+        super(inventoryIn,self).save()
+
 
 
 
@@ -99,19 +197,7 @@ class inventoryIn(models.Model):
 #     def __str__(self):
 #         return self.customerID
 
-class AddInventory(inventoryIn):
 
-
-
-
-    class Meta:
-        proxy = True
-
-
-
-    def __str__(self):
-
-        return 'Contract={0}'.format(self.purchaseContractID)
 
 
 
