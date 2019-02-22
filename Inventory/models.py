@@ -33,7 +33,7 @@ class productDetails(models.Model):
              update_fields=None):
         from Accounts.models import elementaryhead
         accountID = elementaryhead.objects.order_by('id').last().id + 1
-        code = '00003-00003-000' + str(accountID)
+        code = '00003-00003-0000' + str(accountID)
         subhead = 3
         elementaryhead.objects.create(subhead_id=subhead, name='CURRENT STOCK('+self.name+')', fixed=False, codes=code, right=True)
         accountID = elementaryhead.objects.order_by('id').last().id + 1
