@@ -81,13 +81,6 @@ class inventoryIn(models.Model):
     def __str__(self):
         return str(self.supplierID)
 
-    def createJournalEntry(self,AccountObject,amount):
-        from Accounts.models import voucher, accounts
-        journalVoucher = voucher.objects.create(name='')
-        voucherId=voucher.objects.latest('id')
-        if AccountObject[0].get('left'):
-          lastbalance=accounts.objects.values('balance').filter(id=AccountObject[0].get('id'))
-          accounts.objects.create(elementary=AccountObject[0].get('id'),debit=amount,credit=0,balance=lastbalance[0].balance+amount,voucherType='JournalVoucher',voucherID=voucherId)
 
 
     def save(self, force_insert=False, force_update=False, using=None,
