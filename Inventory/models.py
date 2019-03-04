@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-
+from django.utils.timezone import now
 
 # Create your models here.
 class counts(models.Model):
@@ -58,7 +58,7 @@ class products(models.Model):
     currentInventory=models.IntegerField(verbose_name='Current Inventory')
     currentPrice=models.IntegerField(verbose_name='Current Price')
     minimumRequired=models.IntegerField(verbose_name='Minimum Required')
-    dateModified=models.DateTimeField(default=datetime.now())
+    dateModified=models.DateTimeField(default=now)
 
 
 class inventoryIn(models.Model):
@@ -77,7 +77,7 @@ class inventoryIn(models.Model):
     agingDate=models.DateField(verbose_name='Receiving Date')
     labReportImage = models.ImageField(upload_to='labReportImage/%Y/%m/%d', blank=True,verbose_name='Lab Report Image')
     enterPaymentDays = models.IntegerField(verbose_name='Enter Payment Days', blank=True, default=None)
-    dateOfEntry=models.DateField(default=datetime.now())
+    dateOfEntry=models.DateField(default=now)
     def __str__(self):
         return str(self.supplierID)
 
@@ -174,25 +174,37 @@ class inventoryIn(models.Model):
 
 
 
-# class inventoryOut(models.Model):
-#     from Sale.models import customers, contracts
-#     customerID = models.ForeignKey(customers, on_delete=models.CASCADE, verbose_name='Supplier')
-#     productID = models.ForeignKey(products, on_delete=models.CASCADE)
-#     saleContractID = models.ForeignKey(contracts, on_delete=models.CASCADE)
-#     unitsIn = models.IntegerField(verbose_name='Units In')
-#     doID = models.IntegerField(verbose_name='Do ID')
-#     doImage = models.ImageField(upload_to='/assets/image')
-#     invoiceID = models.IntegerField(verbose_name='Invoice ID')
-#     invoiceImage = models.ImageField(upload_to='/assets/image')
-#     agingDate = models.DateField()
-#     dateOfEntry = models.DateField(default=datetime.now())
-#
-#     def __str__(self):
-#         return self.customerID
+class inventoryOut(models.Model):
+    customerID = models.ForeignKey('Sale.customers', on_delete=models.CASCADE, verbose_name='Supplier')
+    productID = models.ForeignKey(products, on_delete=models.CASCADE,verbose_name='Product')
+    saleContractID = models.ForeignKey('Sale.contracts', on_delete=models.CASCADE,verbose_name='Sale Contract')
+    unitsOut = models.IntegerField(verbose_name='Units Out',null=True)
+    doID = models.IntegerField(verbose_name='Do ID',null=True)
+    doImage = models.ImageField(upload_to='doImage/%Y/%m/%d',null=True)
+    paymentDays=models.IntegerField(verbose_name='Payment Days',null=True)
+    dateOfEntry = models.DateField(default=now)
+
+    def __str__(self):
+        return self.customerID
+
+class productsPacking(models.Model):
+    name=models.CharField(max_length=25,verbose_name='Name')
+    weightPerBag=models.IntegerField(verbose_name='Weight Per Bag',null=True)
+    conesPerBag=models.IntegerField(verbose_name='Cones Per Bag',null=True)
+    weightPerCone=models.IntegerField(verbose_name='Weight Per Cone',null=True)
+
+class productItems(models.Model):
+    productDetailID=models.ForeignKey(productDetails,on_delete=models.CASCADE,verbose_name='Product Detail')
+    productsPackingID=models.ForeignKey(productsPacking,on_delete=models.CASCADE,verbose_name='Product Packing')
+    noOfBags=models.IntegerField(verbose_name='No Of Bags',null=True)
+    noOfAdditionalCones=models.IntegerField(verbose_name='No Of Additional Cones',null=True)
 
 
-
-
+class inventoryInDetails(models.Model):
+    inventoryInID=models.ForeignKey(inventoryIn,on_delete=models.CASCADE,null=True)
+    productsPackingID=models.ForeignKey(productsPacking,on_delete=models.CASCADE,null=True)
+    noOfBags=models.IntegerField(verbose_name='No Of Bags',null=True)
+    noOfAdditionalCones = models.IntegerField(verbose_name='No Of Additional Cones', null=True)
 
 
 

@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="be44294f-1a27-4a43-aa13-e49cf82db611" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Purchase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purchase/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sale/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sale/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,56 +18,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inventory/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Purchase/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Inventory/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,9 +39,12 @@
       <find>crea5</find>
       <find>objects.crea</find>
       <find>upload</find>
+      <find>Image</find>
+      <find>datetime.now()</find>
     </findStrings>
     <replaceStrings>
       <replace>1</replace>
+      <replace>now</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -130,19 +86,19 @@
         <option value="$PROJECT_DIR$/Accounts/admin.py" />
         <option value="$PROJECT_DIR$/Accounts/views.py" />
         <option value="$PROJECT_DIR$/Sale/admin.py" />
-        <option value="$PROJECT_DIR$/Sale/models.py" />
         <option value="$PROJECT_DIR$/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
         <option value="$PROJECT_DIR$/Purchase/admin.py" />
-        <option value="$PROJECT_DIR$/Accounts/models.py" />
         <option value="$PROJECT_DIR$/YarnMMS/assets/js/main.js" />
         <option value="$PROJECT_DIR$/YarnMMS/urls.py" />
         <option value="$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js" />
         <option value="$PROJECT_DIR$/Inventory/views.py" />
         <option value="$PROJECT_DIR$/YarnMMS/settings.py" />
         <option value="$PROJECT_DIR$/Inventory/admin.py" />
+        <option value="$PROJECT_DIR$/Accounts/models.py" />
         <option value="$PROJECT_DIR$/Inventory/models.py" />
         <option value="$PROJECT_DIR$/Purchase/models.py" />
+        <option value="$PROJECT_DIR$/Sale/models.py" />
       </list>
     </option>
   </component>
@@ -160,27 +116,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Purchase" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="YarnMMS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,6 +127,17 @@
               <item name="YarnMMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="YarnMMS" type="462c0819:PsiDirectoryNode" />
               <item name="YarnMMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
           </expand>
           <select />
@@ -279,7 +225,9 @@
       <workItem from="1550467613005" duration="17254000" />
       <workItem from="1550552229291" duration="15515000" />
       <workItem from="1550726049622" duration="22219000" />
-      <workItem from="1550816979041" duration="2116000" />
+      <workItem from="1550816979041" duration="2755000" />
+      <workItem from="1551241420631" duration="1280000" />
+      <workItem from="1551675818644" duration="8362000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -400,11 +348,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550820761928</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Product details and supplier elementaryhead issues resolved as per discussion.">
+      <created>1550835680368</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1550835680368</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253620000" />
+    <option name="totallyTimeSpent" value="263901000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,10 +371,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1280" height="926" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="43" width="1280" height="908" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31604537" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32090762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -434,12 +388,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49918962" weight="0.32998747" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49837926" visible="true" weight="0.32747805" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49837926" weight="0.436457" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50162077" side_tool="true" weight="0.32873276" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32998747" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24959481" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
@@ -502,7 +456,8 @@
     <MESSAGE value="added Inventory All Functioning." />
     <MESSAGE value="tested again the solution" />
     <MESSAGE value="tested Product Details And fixed Validations for it." />
-    <option name="LAST_COMMIT_MESSAGE" value="tested Product Details And fixed Validations for it." />
+    <MESSAGE value="Product details and supplier elementaryhead issues resolved as per discussion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Product details and supplier elementaryhead issues resolved as per discussion." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -516,7 +471,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Accounts/templates/my/test2.html" />
     <entry file="file://$PROJECT_DIR$/templates/my/test.html" />
     <entry file="file://$PROJECT_DIR$/templates/my/test2.html" />
     <entry file="file://$PROJECT_DIR$/templates/test.html">
@@ -839,26 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sale/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -883,42 +817,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="390">
+          <caret line="26" column="17" selection-start-line="26" selection-end-line="27" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+    <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="600">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory/migrations/0014_auto_20190221_0617.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Purchase/models.py">
+    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="249">
+          <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#370#2031#0" />
+            <element signature="e#2748#8707#0" />
+            <element signature="e#8750#9452#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Purchase/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#230#2187#0" />
+            <element signature="e#2225#3058#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sale/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#253#2283#0" />
+            <element signature="e#2319#3161#0" />
+            <element signature="e#3200#4372#0" />
+            <element signature="e#4419#4910#0" />
           </folding>
         </state>
       </provider>

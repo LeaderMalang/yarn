@@ -4,6 +4,7 @@ from django_countries.fields import CountryField
 
 from Accounts.models import elementaryhead
 from datetime import datetime
+from django.utils.timezone import now
 import base64
 
 # Create your models here.
@@ -76,7 +77,7 @@ class contracts(models.Model):
     manulContractNumber=models.IntegerField(verbose_name='Manul Contract Number',default=None)
     paymentDays=models.IntegerField(verbose_name='Payment Days',default=None)
     remarks=models.CharField(verbose_name='Remarks',max_length=100,default=None)
-    dateOfEntry=models.DateField(editable=False,default=datetime.now())
+    dateOfEntry=models.DateField(editable=False,default=now)
 
     def __str__(self):
         return str(self.productDetailID.name)
@@ -87,9 +88,7 @@ class contracts(models.Model):
 
 class contractDetails(models.Model):
     contractID=models.ForeignKey(contracts,on_delete=models.CASCADE,verbose_name='Select Contract')
-    weightPerBag=models.IntegerField(verbose_name='Weight Per Bag')
-    conesPerBag=models.IntegerField(verbose_name='Cones Per Bag')
-    weightPerCone=models.IntegerField(verbose_name='Weight Per Cone')
+    productPackingID=models.ForeignKey('Inventory.productsPacking',on_delete=models.CASCADE,verbose_name='Product Packing',null=True)
     noOfBags=models.IntegerField(verbose_name='No of Bags')
     noOfAdditional=models.IntegerField(verbose_name='No of Additional Cones')
     def __str__(self):

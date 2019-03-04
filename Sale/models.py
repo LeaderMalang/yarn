@@ -3,6 +3,7 @@ from Purchase.models import suppliers
 from Accounts.models import *
 from django_countries.fields import CountryField
 from Inventory.models import productDetails
+from  django.utils.timezone import now
 # Create your models here.
 
 class customers(models.Model):
@@ -71,7 +72,7 @@ class contracts(models.Model):
     manulContractNumber=models.IntegerField(verbose_name='Manul Contract Number',default=None)
     paymentDays=models.IntegerField(verbose_name='Payment Days',default=None)
     remarks=models.CharField(verbose_name='Remarks',max_length=100,default=None)
-    dateOfEntry=models.DateField(editable=False,default=datetime.now())
+    dateOfEntry=models.DateField(editable=False,default=now)
     def __str__(self):
         return self.productDetailID
 
