@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be44294f-1a27-4a43-aa13-e49cf82db611" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Accounts/pages_context.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Purchase/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purchase/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Purchase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purchase/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarnMMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/YarnMMS/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,14 +16,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Purchase/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="252">
+              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#268#2225#0" />
+                <element signature="e#2263#3101#0" />
+                <element signature="e#3135#4440#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#158#243#0" />
+                <element signature="e#279#364#0" />
+                <element signature="e#407#2403#0" />
+                <element signature="e#2439#3078#0" />
+                <element signature="e#9122#9810#0" />
               </folding>
             </state>
           </provider>
@@ -149,12 +161,12 @@
         <option value="$PROJECT_DIR$/Accounts/pages_context.py" />
         <option value="$PROJECT_DIR$/YarnMMS/settings.py" />
         <option value="$PROJECT_DIR$/YarnMMS/menu.py" />
-        <option value="$PROJECT_DIR$/Inventory/models.py" />
         <option value="$PROJECT_DIR$/Inventory/admin.py" />
         <option value="$PROJECT_DIR$/YarnMMS/urls.py" />
         <option value="$PROJECT_DIR$/Inventory/views.py" />
-        <option value="$PROJECT_DIR$/Purchase/models.py" />
         <option value="$PROJECT_DIR$/Purchase/admin.py" />
+        <option value="$PROJECT_DIR$/Purchase/models.py" />
+        <option value="$PROJECT_DIR$/Inventory/models.py" />
       </list>
     </option>
   </component>
@@ -198,13 +210,7 @@
             <path>
               <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Inventory" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -300,7 +306,7 @@
       <workItem from="1550816979041" duration="2755000" />
       <workItem from="1551241420631" duration="1280000" />
       <workItem from="1551675818644" duration="14924000" />
-      <workItem from="1551763180329" duration="5321000" />
+      <workItem from="1551763180329" duration="6417000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -435,11 +441,25 @@
       <option name="project" value="LOCAL" />
       <updated>1551691549059</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Correct Supplier Contact Bug">
+      <created>1551785216007</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1551785216007</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Unique brands only">
+      <created>1551786935602</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1551786935602</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275784000" />
+    <option name="totallyTimeSpent" value="276880000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -469,7 +489,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49918962" weight="0.32998747" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49837926" weight="0.43610013" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49837926" visible="true" weight="0.43610013" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50162077" side_tool="true" weight="0.32873276" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32998747" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -539,7 +559,9 @@
     <MESSAGE value="tested Product Details And fixed Validations for it." />
     <MESSAGE value="Product details and supplier elementaryhead issues resolved as per discussion." />
     <MESSAGE value="Finalized All Models and Added new Fields As per Document." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalized All Models and Added new Fields As per Document." />
+    <MESSAGE value="Correct Supplier Contact Bug" />
+    <MESSAGE value="Unique brands only" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unique brands only" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -946,18 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="193" column="21" selection-start-line="193" selection-start-column="6" selection-end-line="193" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#158#243#0" />
-            <element signature="e#279#364#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -987,11 +997,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Purchase/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="252">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#268#2225#0" />
+            <element signature="e#2263#3101#0" />
+            <element signature="e#3135#4440#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#158#243#0" />
+            <element signature="e#279#364#0" />
+            <element signature="e#407#2403#0" />
+            <element signature="e#2439#3078#0" />
+            <element signature="e#9122#9810#0" />
           </folding>
         </state>
       </provider>

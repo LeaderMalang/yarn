@@ -89,7 +89,7 @@ class inventoryIn(models.Model):
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
-        from Purchase.models import contracts,suppliers,contractDetails
+        from Purchase.models import contracts,suppliers
         from Accounts.models import elementaryhead,voucher,accounts
         contract = contracts.objects.values('supplierID', 'productDetailID','ratePerUnit','saleTax','incomeTax','saleTaxwithHeld').filter(id=self.purchaseContractID.id)
         supplier=contract[0].get("supplierID")
