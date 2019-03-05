@@ -1,0 +1,12 @@
+{# First render the pages #}
+{% for page in pages_menu %}
+
+{# Then check if current page is 'published' #}
+{% if page.status == 'published' %}
+
+<li>
+  <a href="{{ page.get_absolute_url }}">{{page.menu_title}}</a>
+</li>
+
+{% endif %}
+{% endfor %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Inventory.models import counts,brands,productDetails,products,inventoryIn
+from Inventory.models import counts,brands,productDetails,products,inventoryIn,productsPacking
 
 # Register your models here.
 admin.site.register(counts)
@@ -38,3 +38,4 @@ admin.site.register(inventoryIn,inventoryInAdmin)
 
 admin.site.register(productDetails,productDetailsAdmin)
 admin.site.register(products)
+admin.site.register(productsPacking)

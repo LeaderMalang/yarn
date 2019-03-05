@@ -46,6 +46,10 @@ class productDetails(models.Model):
         elementaryhead.objects.create(subhead_id=subhead, name='REVENUE ('+self.name+')', fixed=False, codes=code, right=True)
 
         super(productDetails, self).save()
+        productDetailID = productDetails.objects.order_by('id').last()
+        products.objects.create(productDetailsID=productDetailID, startingInventory=0, startingPrice=0,
+                                inventoryReceived=0, inventoryShipped=0, currentInventory=0, currentPrice=0,
+                                minimumRequired=0)
     def __str__(self):
         return self.name
 
