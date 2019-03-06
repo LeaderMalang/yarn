@@ -37,5 +37,5 @@ urlpatterns = [
     url(r'^trialBalance/', AC.trialBalance, name="trialBalance"),
     url(r'^caltrialBalance/', AC.calTrailBalance, name="caltrialBalance"),
     url(r'^cpVoucher/', AC.cpVoucher, name="cpVoucher"),
-    # url(r'^getContractDetail/', IN.getContractDetail, name="getContractDetail"),
+    url(r'^getProductPackingDetail/', IN.getProductPackingDetail, name="getProductPackingDetail"),
 ]

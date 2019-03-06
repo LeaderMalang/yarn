@@ -202,6 +202,8 @@ class productsPacking(models.Model):
              update_fields=None):
         self.weightPerCone=self.weightPerBag/self.conesPerBag
         super(productsPacking,self).save()
+    def __str__(self):
+        return self.name
 
 
 class productItems(models.Model):

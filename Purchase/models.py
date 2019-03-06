@@ -67,19 +67,18 @@ class Contacts(models.Model):
 class contracts(models.Model):
     productDetailID=models.ForeignKey('Inventory.productDetails',related_name='+',on_delete=models.CASCADE,verbose_name='Select Product',default=None)
     supplierID=models.ForeignKey(suppliers,on_delete=models.CASCADE,verbose_name='Select Supplier',default=None)
-    productPackID=models.ForeignKey('Inventory.productsPacking',on_delete=models.CASCADE,verbose_name='Product Packing',null=True)
     totalUnits=models.IntegerField(verbose_name='Total Units',editable=False,default=None)
-    ratePerUnit=models.IntegerField(verbose_name='Rate Per Unit',default=None)
     saleTax=models.IntegerField(verbose_name='Sale Tax',default=None)
     incomeTax=models.IntegerField(verbose_name='Income Tax',default=None)
     saleTaxwithHeld=models.IntegerField(verbose_name='Sale Tax with Held',default=None)
     startDate=models.DateField(verbose_name='Start Date',default=None)
     endDate=models.DateField(verbose_name='End Date',default=None)
+    ratePerUnit = models.IntegerField(verbose_name='Rate Per Unit', default=None)
     manulContractNumber=models.IntegerField(verbose_name='Manul Contract Number',default=None)
     paymentDays=models.IntegerField(verbose_name='Payment Days',default=None)
     remarks=models.CharField(verbose_name='Remarks',max_length=100,default=None)
     dateOfEntry=models.DateField(editable=False,default=now)
-
+    status=models.NullBooleanField(default=True,null=True,editable=False)
     def __str__(self):
         return str(self.productDetailID.name)
 
@@ -87,13 +86,13 @@ class contracts(models.Model):
 
 
 
-# class contractDetails(models.Model):
-#     contractID=models.ForeignKey(contracts,on_delete=models.CASCADE,verbose_name='Select Contract')
-#     productPackingID=models.ForeignKey('Inventory.productsPacking',on_delete=models.CASCADE,verbose_name='Product Packing',null=True)
-#     noOfBags=models.IntegerField(verbose_name='No of Bags')
-#     noOfAdditional=models.IntegerField(verbose_name='No of Additional Cones')
-#     def __str__(self):
-#         return str(self.contractID)
+class contractDetails(models.Model):
+    contractID=models.ForeignKey(contracts,on_delete=models.CASCADE,verbose_name='Select Contract')
+    productPackingID=models.ForeignKey('Inventory.productsPacking',on_delete=models.CASCADE,verbose_name='Product Packing',null=True)
+    noOfBags=models.IntegerField(verbose_name='No of Bags')
+    noOfAdditional=models.IntegerField(verbose_name='No of Additional Cones')
+    def __str__(self):
+        return str(self.contractID)
 
 
 
