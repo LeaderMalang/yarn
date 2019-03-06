@@ -195,7 +195,14 @@ class productsPacking(models.Model):
     name=models.CharField(max_length=25,verbose_name='Name')
     weightPerBag=models.IntegerField(verbose_name='Weight Per Bag',null=True)
     conesPerBag=models.IntegerField(verbose_name='Cones Per Bag',null=True)
-    weightPerCone=models.IntegerField(verbose_name='Weight Per Cone',null=True)
+    weightPerCone=models.IntegerField(verbose_name='Weight Per Cone',null=True,editable=False)
+
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.weightPerCone=self.weightPerBag/self.conesPerBag
+        super(productsPacking,self).save()
+
 
 class productItems(models.Model):
     productDetailID=models.ForeignKey(productDetails,on_delete=models.CASCADE,verbose_name='Product Detail')

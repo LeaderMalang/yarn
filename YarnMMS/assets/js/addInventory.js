@@ -3,37 +3,45 @@
 
     $(document).ready(function () {
         //Add inventory
-        $('#id_purchaseContractID').click(function () {
+        $('#id_productPackID').click(function () {
 
-           contractID=this.value;
-           reqURL=window.location.origin+'/getContractDetail/';
-            formData=$('#inventoryin_form').serialize();
-           $.ajax({
-                  type: "POST",
-                  url: reqURL,
-                  data: formData,
-           }).done(function (data) {
-               console.log(data);
+           productPackingID=this.value;
+           alert(productPackingID);
+           reqURL=window.location.origin+'/getProductPackingDetail/';
+           // formData=$('#addinventory_form').serialize();
+           // $.ajax({
+           //        type: "POST",
+           //        url: reqURL,
+           //        data: formData,
+           // }).done(function (data) {
+           //     console.log(data);
+           //
+           //     weightPerBag=data.contractDetails.weightPerBag;
+           //     conesPerBag=data.contractDetails.conesPerBag;
+           //     noOfAdditional=data.contractDetails.noOfAdditional;
+           //     weightPerCone=data.contractDetails.weightPerCone;
+           //     conesPerBag=data.contractDetails.conesPerBag;
+           //     noOfBags=data.contractDetails.noOfBags;
+           //     totalWeight=(noOfAdditional*weightPerCone)+(weightPerBag*noOfBags);
+           //
+           //     console.log("cones"+noOfAdditional+"*"+conesPerBag);
+           //
+           //
+           //
+           //     console.log(totalWeight);
+           //
+           //
+           // });
+        });
+        //ADD calculated Weight
+        $('#id_conesPerBag').focusout(function () {
+            conePerBag=this.value;
+            weightPerBag=$('#id_weightPerBag').val();
+           weightPerCone= $('.field-weightPerCone').find('div.readonly');
+           weightPerConeValue=weightPerBag/conePerBag
+           weightPerConeInput='<input type="text" name="weightPerCone" value="'+weightPerConeValue+'" disabled/>';
 
-               weightPerBag=data.contractDetails.weightPerBag;
-               conesPerBag=data.contractDetails.conesPerBag;
-               noOfAdditional=data.contractDetails.noOfAdditional;
-               weightPerCone=data.contractDetails.weightPerCone;
-               conesPerBag=data.contractDetails.conesPerBag;
-               noOfBags=data.contractDetails.noOfBags;
-               totalWeight=(noOfAdditional*weightPerCone)+(weightPerBag*noOfBags);
-               remainingBags=noOfBags-data.remainingBags;
-
-
-                elementTotalWeight='<div class="form-group"><div><label class="required">Total Weight:</label><input type="text" disabled value="'+totalWeight+'"/></div></div>';
-                elementnoOfBags='<div class="form-group"><div><label class="required">Total Bags:</label><input type="text" disabled value="'+noOfBags+'"/></div></div>';
-                elementRemainingBags='<div class="form-group"><div><label class="required">Remaining Bags:</label><input type="text" disabled value="'+remainingBags+'"/></div></div>';
-
-                $('.module').append(elementnoOfBags,elementRemainingBags,elementTotalWeight);
-               console.log(totalWeight);
-
-
-           });
+           weightPerCone.html(weightPerConeInput);
         });
 
     });

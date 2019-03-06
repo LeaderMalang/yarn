@@ -38,4 +38,12 @@ admin.site.register(inventoryIn,inventoryInAdmin)
 
 admin.site.register(productDetails,productDetailsAdmin)
 admin.site.register(products)
-admin.site.register(productsPacking)
+
+class productPackingAdmin(admin.ModelAdmin):
+    readonly_fields = ('weightPerCone',)
+    list_display = ['name','weightPerBag','conesPerBag']
+
+    class Media:
+        js=('js/addInventory.js',)
+
+admin.site.register(productsPacking,productPackingAdmin)
