@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.utils.timezone import now
-
+from Purchase.models import contracts
 # Create your models here.
 class counts(models.Model):
 
@@ -56,7 +56,7 @@ class productDetails(models.Model):
 class products(models.Model):
     productDetailsID=models.ForeignKey(productDetails,on_delete=models.CASCADE)
     startingInventory=models.IntegerField(verbose_name='Starting Inventory')
-    startingPrice=models.IntegerField(verbose_name='Starting Price')
+    startingPrice=models.IntegerField(verbose_name='Starting Price',null=True)
     inventoryReceived=models.IntegerField(verbose_name='Inventory Received')
     inventoryShipped=models.IntegerField(verbose_name='Inventory Shipped')
     currentInventory=models.IntegerField(verbose_name='Current Inventory')
@@ -67,11 +67,10 @@ class products(models.Model):
 
 class inventoryIn(models.Model):
 
-
-    supplierID=models.ForeignKey('Purchase.suppliers',editable=False,on_delete=models.CASCADE,verbose_name='Supplier')
-    productID=models.ForeignKey(products,editable=False,on_delete=models.CASCADE)
-    purchaseContractID=models.ForeignKey('Purchase.contracts',on_delete=models.CASCADE,verbose_name='Contract ID')
+    purchaseContractID=models.ForeignKey('Purchase.contracts',
+                                         on_delete=models.CASCADE,verbose_name='Contract ID')
     unitsIn=models.IntegerField(verbose_name='Enter No of Bags')
+    noOfAddCones=models.IntegerField(verbose_name='Additional No Of Cones',null=True)
     MYCHOCIES = (('orginal', 'ORGINAL'), ('dummy', 'DUMMY'))
     doType = models.CharField(blank=True, choices=MYCHOCIES, verbose_name='Select DO Type', max_length=20)
     doID=models.IntegerField(verbose_name='Do No')
@@ -83,13 +82,13 @@ class inventoryIn(models.Model):
     enterPaymentDays = models.IntegerField(verbose_name='Enter Payment Days', blank=True, default=None)
     dateOfEntry=models.DateField(default=now)
     def __str__(self):
-        return str(self.supplierID)
+        return str(self.purchaseContractID)
 
 
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
-        from Purchase.models import contracts,suppliers
+        from Purchase.models import contracts,suppliers,contractDetails
         from Accounts.models import elementaryhead,voucher,accounts
         contract = contracts.objects.values('supplierID', 'productDetailID','ratePerUnit','saleTax','incomeTax','saleTaxwithHeld').filter(id=self.purchaseContractID.id)
         supplier=contract[0].get("supplierID")
@@ -149,7 +148,7 @@ class inventoryIn(models.Model):
         productDetailInstance = productDetails.objects.get(id=product)
         currentPrice = currentStockValue / self.unitsIn
         if productInventory:
-            currentInventory=productInventory[0].get('startingInventory')+productInventory[0].get('inventoryReceived')-productInventory[0].get('inventoryShipped')
+            currentInventory=productInventory[0].startingInventory+productInventory[0].inventoryReceived-productInventory[0].inventoryShipped
 
             products.objects.create(productDetailsID=productDetailInstance,startingInventory=contractDetail[0].noOfBags
                                     ,inventoryReceived=self.unitsIn,inventoryShipped=0,currentInventory=currentInventory,currentPrice=currentPrice,minimumRequired=0)
@@ -172,7 +171,7 @@ class inventoryIn(models.Model):
 
 
         self.supplierID=suppliers.objects.get(id=supplier)
-        self.productID=products.objects.get(productDetailsID=product)
+        self.productID=product
         super(inventoryIn,self).save()
 
 

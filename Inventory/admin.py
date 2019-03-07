@@ -23,7 +23,7 @@ class productDetailsAdmin(admin.ModelAdmin):
 
 
 class inventoryInAdmin(admin.ModelAdmin):
-    fields = ['purchaseContractID','unitsIn','doType','doID','doImage','invoiceID','invoiceImage','agingDate','labReportImage','enterPaymentDays']
+    fields = ['purchaseContractID','unitsIn','noOfAddCones','doType','doID','doImage','invoiceID','invoiceImage','agingDate','labReportImage','enterPaymentDays']
 
     class Media:
         js = ('js/addInventory.js',)
