@@ -9,7 +9,7 @@ import base64
 
 # Create your models here.
 class suppliers(models.Model):
-    companyName=models.CharField(max_length=30,verbose_name='Company Name')
+    companyName=models.CharField(max_length=30,verbose_name='Company Name',unique=True)
     companyAddress=models.CharField(max_length=50,verbose_name='Company Address')
     city=models.CharField(max_length=20,verbose_name='City')
     region=models.CharField(max_length=20,verbose_name='Region')
@@ -54,9 +54,9 @@ class Contacts(models.Model):
     title=models.CharField(max_length=10,verbose_name='Title',choices=My_CHOICES)
     phone1=models.BigIntegerField(verbose_name='Phone')
     phone2=models.BigIntegerField(verbose_name='Another Phone',default=None)
-    mobile1=models.BigIntegerField(verbose_name='Mobile')
+    mobile1=models.BigIntegerField(verbose_name='Mobile',unique=True)
     mobile2=models.BigIntegerField(verbose_name='Another Mobile',default=None)
-    email=models.EmailField()
+    email=models.EmailField(unique=True)
     fax=models.IntegerField(default=None,verbose_name='Fax')
 
     def __str__(self):
