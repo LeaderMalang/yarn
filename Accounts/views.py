@@ -38,21 +38,21 @@ def index(request):
 
 #List View for SubHead
 def subhead(request):
-    assets=subheads.objects.filter(head=1)
-    equity=subheads.objects.filter(head=4)
-    liability=subheads.objects.filter(head=3)
-    revenue=subheads.objects.filter(head=5)
-    expense=subheads.objects.filter(head=2)
+    assets=subheads.objects.filter(Head_ID=1)
+    equity=subheads.objects.filter(Head_ID=4)
+    liability=subheads.objects.filter(Head_ID=3)
+    revenue=subheads.objects.filter(Head_ID=5)
+    expense=subheads.objects.filter(Head_ID=2)
 
     return render(request,'subhead.html',{"assets":assets,"equity":equity,"liability":liability,"revenue":revenue,"expense":expense})
 
 
 def elementaryHead (request):
-    assetsQuery = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=1 AND ele.subhead_id=sub.id')
-    equity = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=3 AND ele.subhead_id=sub.id')
-    liability = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=2 AND ele.subhead_id=sub.id')
-    revenue = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=5 AND ele.subhead_id=sub.id')
-    expense = elementaryhead.objects.raw('SELECT ele.name as elementaryHead,ele.id,sub.name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.head_id=4 AND ele.subhead_id=sub.id')
+    assetsQuery = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=1 AND ele.Subhead_ID=sub.id')
+    equity = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=3 AND ele.Subhead_ID=sub.id')
+    liability = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=2 AND ele.Subhead_ID=sub.id')
+    revenue = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=5 AND ele.Subhead_ID=sub.id')
+    expense = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=4 AND ele.Subhead_ID=sub.id')
     return render(request,'elementaryhead.html',{"assets":assetsQuery,"equity":equity,"liability":liability,"revenue":revenue,"expense":expense})
 
 def addAccount(request):
@@ -65,7 +65,7 @@ def addAccount(request):
 def loadsubhead(request):
     if request.method == 'POST':
         id=request.POST.get('id')
-        subhead=subheads.objects.filter(head=id)
+        subhead=subheads.objects.filter(Head_ID=id)
     data = {
         'subheads': serializers.serialize('json', subhead)
     }
@@ -76,15 +76,15 @@ def saveAccounts(request):
     if request.method == 'POST':
         accountID = elementaryhead.objects.order_by('id').last().id + 1
 
-        subheadID=request.POST.get('subhead')
-        headID=request.POST.get('head')
+        subheadID=request.POST.get('Subhead_ID')
+        headID=request.POST.get('Head_ID')
         code = '0000'+str(headID)+'-'+ '0000' + str(subheadID) + '-0000' + str(accountID)
         if int(headID) in [1,2]:
-            elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),name=request.POST.get('name'), fixed=False, codes=code,left=True)
+            elementary = elementaryhead.objects.create(Subhead_ID=subheads.objects.get(id=subheadID),Name=request.POST.get('name'), Fixed_Flag=False, Account_Codes=code,Left=True)
         elif int(headID) in [3,4,5]:
-            elementary = elementaryhead.objects.create(subhead=subheads.objects.get(id=subheadID),
-                                                       name=request.POST.get('name'), fixed=False, codes=code,
-                                                       right=True)
+            elementary = elementaryhead.objects.create(Subhead_ID=subheads.objects.get(id=subheadID),
+                                                       Name=request.POST.get('name'), Fixed_Flag=False, Account_Codes=code,
+                                                       Right=True)
 
 
 
@@ -110,10 +110,10 @@ def savejournalVoucher(request):
 
         for i in range(int(totalelements)):
             balance = 0
-            target = "form-" + str(i) + "-elementary"
-            debitName = "form-" + str(i) + "-debit"
-            creditName = "form-" + str(i) + "-credit"
-            descriptionName = "form-" + str(i) + "-description"
+            target = "form-" + str(i) + "-Elementary_Head_ID"
+            debitName = "form-" + str(i) + "-Debit"
+            creditName = "form-" + str(i) + "-Credit"
+            descriptionName = "form-" + str(i) + "-Description"
             accountID = request.POST.get(target)
             if debitName in request.POST:
                 debit = request.POST.get(debitName)
@@ -136,12 +136,12 @@ def savejournalVoucher(request):
 
             accountID = int(accountID)
             accountType=elementaryhead.objects.values('left','right').filter(id=accountID)
-            lastBalance=accounts.objects.values('balance').filter(elementary=accountID).last()
+            lastBalance=accounts.objects.values('balance').filter(Elementary_Head_ID=accountID).last()
             left=accountType[0].get('left')
             right=accountType[0].get('right')
 
             if lastBalance:
-                lastBalance = lastBalance.get('balance')
+                lastBalance = lastBalance.get('Balance')
 
                 if debit and left:
                     balance = lastBalance + debit
@@ -164,7 +164,7 @@ def savejournalVoucher(request):
 
 
 
-            query = ''' INSERT INTO `Accounts_accounts`(`voucherType`, `title`, `description`, `balance`, `date`, `voucherFlag`, `dateTime`, `elementary_id`, `voucherID_id`, `credit`, `debit`) VALUES
+            query = ''' INSERT INTO `Accounts_accounts`(`Voucher_Type`, `Title`, `Description`, `Balance`, `Date_Of_Entry`, `Voucher_Flag`, `Current_Date_Time`, `Elementary_Head_ID`, `Voucher_ID`, `Credit`, `Debit`) VALUES
                                                      (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) '''
 
             c = connection.cursor()
@@ -187,7 +187,7 @@ def trialBalance(request):
 def calTrailBalance(request):
     start=request.GET.get('start')
     end=request.GET.get('end')
-    trialBalances=accounts.objects.raw("SELECT id,elementary_id,(SUM(debit)-SUM(credit)) As res FROM `Accounts_accounts` where date BETWEEN '"+start+"' and  '"+end+"' GROUP By elementary_id")
+    trialBalances=accounts.objects.raw("SELECT id,Elementary_Head_ID,(SUM(Debit)-SUM(Credit)) As res FROM `Accounts_accounts` where date BETWEEN '"+start+"' and  '"+end+"' GROUP By Elementary_Head_ID")
     dicttrailbalances=[]
     totaldebit=0
     totalcredit=0
