@@ -9,27 +9,27 @@ class AccountsForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(AccountsForm, self).__init__(*args, **kwargs)
         self.fields['head'].widget.attrs['class'] = 'form-control'
-        self.fields['subhead'].widget.attrs['class'] = 'form-control'
-        self.fields['name'].widget.attrs['class'] = 'form-control'
+        self.fields['Subhead_ID'].widget.attrs['class'] = 'form-control'
+        self.fields['Name'].widget.attrs['class'] = 'form-control'
 
     class Meta:
         model=elementaryhead
-        fields=('head','subhead','name')
+        fields=('head','Subhead_ID','Name')
 
 class trasactionForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(trasactionForm, self).__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs['class'] = 'form-control'
-        self.fields['elementary'].widget.attrs['class'] = 'form-control'
-        self.fields['description'].widget.attrs['class'] = 'form-control'
-        self.fields['debit'].widget.attrs['class'] = 'form-control'
-        self.fields['credit'].widget.attrs['class'] = 'form-control'
+        self.fields['Date_Of_Entry'].widget.attrs['class'] = 'form-control'
+        self.fields['Elementary_Head_ID'].widget.attrs['class'] = 'form-control'
+        self.fields['Description'].widget.attrs['class'] = 'form-control'
+        self.fields['Debit'].widget.attrs['class'] = 'form-control'
+        self.fields['Credit'].widget.attrs['class'] = 'form-control'
     class Meta:
         model=accounts
-        fields=('date','elementary','description','debit','credit',)
-        labels = {
-            'Date', 'Elementary Head','Description','Debit','Credit'
-        }
+        fields=('Date_Of_Entry','Elementary_Head_ID','Description','Debit','Credit',)
+        # labels = {
+        #     'Date', 'Elementary Head','Description','Debit','Credit'
+        # }
 
 TransactionItemFormset = formset_factory(trasactionForm, extra=2)
