@@ -48,11 +48,11 @@ def subhead(request):
 
 
 def elementaryHead (request):
-    assetsQuery = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=1 AND ele.Subhead_ID=sub.id')
-    equity = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=3 AND ele.Subhead_ID=sub.id')
-    liability = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=2 AND ele.Subhead_ID=sub.id')
-    revenue = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=5 AND ele.Subhead_ID=sub.id')
-    expense = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID=4 AND ele.Subhead_ID=sub.id')
+    assetsQuery = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID_id=1 AND ele.Subhead_ID_id=sub.id')
+    equity = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID_id=3 AND ele.Subhead_ID_id=sub.id')
+    liability = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID_id=2 AND ele.Subhead_ID_id=sub.id')
+    revenue = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID_id=5 AND ele.Subhead_ID_id=sub.id')
+    expense = elementaryhead.objects.raw('SELECT ele.Name as elementaryHead,ele.id,sub.Name as subHead FROM `Accounts_subheads` as sub JOIN Accounts_elementaryhead ele ON sub.Head_ID_id=4 AND ele.Subhead_ID_id=sub.id')
     return render(request,'elementaryhead.html',{"assets":assetsQuery,"equity":equity,"liability":liability,"revenue":revenue,"expense":expense})
 
 def addAccount(request):

@@ -3,35 +3,35 @@
     "model": "Accounts.heads",
     "pk": 1,
     "fields": {
-      "name": "ASSETS"
+      "Name": "ASSETS"
     }
   },
   {
     "model": "Accounts.heads",
     "pk": 2,
     "fields": {
-      "name": "EXPENSE"
+      "Name": "EXPENSE"
     }
   },
   {
     "model": "Accounts.heads",
     "pk": 3,
     "fields": {
-      "name": "LIABILITIES"
+      "Name": "LIABILITIES"
     }
   },
   {
     "model": "Accounts.heads",
     "pk": 4,
     "fields": {
-      "name": "EQUITY"
+      "Name": "EQUITY"
     }
   },
   {
     "model": "Accounts.heads",
     "pk": 5,
     "fields": {
-      "name": "REVENUE"
+      "Name": "REVENUE"
     }
   },
 
@@ -39,9 +39,9 @@
     "model": "Accounts.subheads",
     "pk": 1,
     "fields": {
-      "head": 1,
-      "name": "CASH",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "CASH",
+      "Fixed_Flag": 1
 
     }
   },
@@ -49,9 +49,9 @@
     "model": "Accounts.subheads",
     "pk": 2,
     "fields": {
-      "head": 1,
-      "name": "BANK",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "BANK",
+      "Fixed_Flag": 1
 
     }
   },
@@ -59,9 +59,9 @@
     "model": "Accounts.subheads",
     "pk": 3,
     "fields": {
-      "head": 1,
-      "name": "INVENTORY",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "INVENTORY",
+      "Fixed_Flag": 1
 
     }
   },
@@ -69,9 +69,9 @@
     "model": "Accounts.subheads",
     "pk": 4,
     "fields": {
-      "head": 1,
-      "name": "ACCOUNTS RECIEVEABLE",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "ACCOUNTS RECIEVEABLE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -79,9 +79,9 @@
     "model": "Accounts.subheads",
     "pk": 5,
     "fields": {
-      "head": 1,
-      "name": "PREPAID EXPENSES",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "PREPAID EXPENSES",
+      "Fixed_Flag": 1
 
     }
   },
@@ -89,9 +89,9 @@
     "model": "Accounts.subheads",
     "pk": 6,
     "fields": {
-      "head": 1,
-      "name": "PROPERTY, PLANT & EQUIPMENT",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "PROPERTY, PLANT & EQUIPMENT",
+      "Fixed_Flag": 1
 
     }
   },
@@ -99,9 +99,9 @@
     "model": "Accounts.subheads",
     "pk": 7,
     "fields": {
-      "head": 1,
-      "name": "INPUT GST ON CONTRACT",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "INPUT GST ON CONTRACT",
+      "Fixed_Flag": 1
 
     }
   },
@@ -109,9 +109,9 @@
     "model": "Accounts.subheads",
     "pk": 8,
     "fields": {
-      "head": 1,
-      "name": "INCOME-TAX DEDUCTED AT SOURCE",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "INCOME-TAX DEDUCTED AT SOURCE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -119,9 +119,9 @@
     "model": "Accounts.subheads",
     "pk": 9,
     "fields": {
-      "head": 1,
-      "name": "GST WITHHELD",
-      "fixed": 1
+      "Head_ID": 1,
+      "Name": "GST WITHHELD",
+      "Fixed_Flag": 1
 
     }
   },
@@ -129,9 +129,9 @@
     "model": "Accounts.subheads",
     "pk": 10,
     "fields": {
-      "head": 3,
-      "name": "ACCOUNTS PAYABLE",
-      "fixed": 1
+      "Head_ID": 3,
+      "Name": "ACCOUNTS PAYABLE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -139,9 +139,9 @@
     "model": "Accounts.subheads",
     "pk": 11,
     "fields": {
-      "head": 3,
-      "name": "TAX PAYABLE",
-      "fixed": 1
+      "Head_ID": 3,
+      "Name": "TAX PAYABLE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -149,9 +149,9 @@
     "model": "Accounts.subheads",
     "pk": 12,
     "fields": {
-      "head": 3,
-      "name": "SALARIES & WAGES PAYABLE",
-      "fixed": 1
+      "Head_ID": 3,
+      "Name": "SALARIES & WAGES PAYABLE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -159,9 +159,9 @@
     "model": "Accounts.subheads",
     "pk": 13,
     "fields": {
-      "head": 2,
-      "name": "OTHER ACCRUED EXPENSES PAYABLE",
-      "fixed": 1
+      "Head_ID": 2,
+      "Name": "OTHER ACCRUED EXPENSES PAYABLE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -169,9 +169,9 @@
     "model": "Accounts.subheads",
     "pk": 14,
     "fields": {
-      "head": 3,
-      "name": "INTERCOMPANY PAYABLES",
-      "fixed": 1
+      "Head_ID": 3,
+      "Name": "INTERCOMPANY PAYABLES",
+      "Fixed_Flag": 1
 
     }
   },
@@ -179,9 +179,9 @@
     "model": "Accounts.subheads",
     "pk": 15,
     "fields": {
-      "head": 3,
-      "name": "OUTPUT GST",
-      "fixed": 1
+      "Head_ID": 3,
+      "Name": "OUTPUT GST",
+      "Fixed_Flag": 1
 
     }
   },
@@ -189,9 +189,9 @@
     "model": "Accounts.subheads",
     "pk": 16,
     "fields": {
-      "head": 4,
-      "name": "OWNER'S CAPITAL",
-      "fixed": 1
+      "Head_ID": 4,
+      "Name": "OWNER'S CAPITAL",
+      "Fixed_Flag": 1
 
     }
   },
@@ -199,9 +199,9 @@
     "model": "Accounts.subheads",
     "pk": 17,
     "fields": {
-      "head": 4,
-      "name": "RETAINED EARNINGS",
-      "fixed": 1
+      "Head_ID": 4,
+      "Name": "RETAINED EARNINGS",
+      "Fixed_Flag": 1
 
     }
   },
@@ -209,9 +209,9 @@
     "model": "Accounts.subheads",
     "pk": 18,
     "fields": {
-      "head":3,
-      "name": "DIVIDENDS",
-      "fixed": 1
+      "Head_ID":3,
+      "Name": "DIVIDENDS",
+      "Fixed_Flag": 1
 
     }
   },
@@ -219,9 +219,9 @@
     "model": "Accounts.subheads",
     "pk": 19,
     "fields": {
-      "head": 4,
-      "name": "DRAWINGS",
-      "fixed": 1
+      "Head_ID": 4,
+      "Name": "DRAWINGS",
+      "Fixed_Flag": 1
 
     }
   },
@@ -229,9 +229,9 @@
     "model": "Accounts.subheads",
     "pk": 20,
     "fields": {
-      "head": 2,
-      "name": "OPERATING EXPENSE",
-      "fixed": 1
+      "Head_ID": 2,
+      "Name": "OPERATING EXPENSE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -239,9 +239,9 @@
     "model": "Accounts.subheads",
     "pk": 21,
     "fields": {
-      "head": 2,
-      "name": "ADMINISTRATIVE EXPENSE",
-      "fixed": 1
+      "Head_ID": 2,
+      "Name": "ADMINISTRATIVE EXPENSE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -249,9 +249,9 @@
     "model": "Accounts.subheads",
     "pk": 22,
     "fields": {
-      "head": 2,
-      "name": "SELLING EXPENSE ",
-      "fixed": 1
+      "Head_ID": 2,
+      "Name": "SELLING EXPENSE ",
+      "Fixed_Flag": 1
 
     }
   },
@@ -259,9 +259,9 @@
     "model": "Accounts.subheads",
     "pk": 23,
     "fields": {
-      "head": 2,
-      "name": "FINANCIAL EXPENSE",
-      "fixed": 1
+      "Head_ID": 2,
+      "Name": "FINANCIAL EXPENSE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -269,9 +269,9 @@
     "model": "Accounts.subheads",
     "pk": 24,
     "fields": {
-      "head": 5,
-      "name": "OPERATING REVENUE",
-      "fixed": 1
+      "Head_ID": 5,
+      "Name": "OPERATING REVENUE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -279,9 +279,9 @@
     "model": "Accounts.subheads",
     "pk": 25,
     "fields": {
-      "head": 5,
-      "name": "OTHER REVENUE",
-      "fixed": 1
+      "Head_ID": 5,
+      "Name": "OTHER REVENUE",
+      "Fixed_Flag": 1
 
     }
   },
@@ -290,12 +290,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 1,
     "fields": {
-      "subhead": 1,
-      "name": "CASH IN HAND",
-      "codes": "00001-00001-00001",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 1,
+      "Name": "CASH IN HAND",
+      "Account_Codes": "00001-00001-00001",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
     }
   },
@@ -303,12 +303,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 2,
     "fields": {
-      "subhead": 3,
-      "name": "GOODS IN TRANSIT",
-      "codes": "00001-00003-00002",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 3,
+      "Name": "GOODS IN TRANSIT",
+      "Account_Codes": "00001-00003-00002",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
     }
   },
@@ -316,12 +316,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 3,
     "fields": {
-      "subhead": 3,
-      "name": "GOODS OUT TRANSIT",
-      "codes": "00001-00003-00003",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 3,
+      "Name": "GOODS OUT TRANSIT",
+      "Account_Codes": "00001-00003-00003",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
     }
   },
@@ -329,12 +329,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 4,
     "fields": {
-      "subhead": 3,
-      "name": "WORK IN PROGRESS",
-      "codes": "00001-00003-00004",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 3,
+      "Name": "WORK IN PROGRESS",
+      "Account_Codes": "00001-00003-00004",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
     }
   },
@@ -342,12 +342,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 5,
     "fields": {
-      "subhead": 3,
-      "name": "CURRENT STOCK",
-      "codes": "00001-00003-00005",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 3,
+      "Name": "CURRENT STOCK",
+      "Account_Codes": "00001-00003-00005",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
 
     }
@@ -356,12 +356,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 6,
     "fields": {
-      "subhead": 5,
-      "name": "INSURANCE",
-      "codes": "00001-00005-00006",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 5,
+      "Name": "INSURANCE",
+      "Account_Codes": "00001-00005-00006",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
 
     }
@@ -370,12 +370,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 7,
     "fields": {
-      "subhead": 6,
-      "name": "REPAIRS & MAINTAINANCE",
-      "codes": "00001-00006-00007",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 6,
+      "Name": "REPAIRS & MAINTAINANCE",
+      "Account_Codes": "00001-00006-00007",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
 
     }
@@ -384,12 +384,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 8,
     "fields": {
-      "subhead": 6,
-      "name": "ADVANCE RENT",
-      "codes": "00001-00006-00008",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 6,
+      "Name": "ADVANCE RENT",
+      "Account_Codes": "00001-00006-00008",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
 
     }
@@ -398,12 +398,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 9,
     "fields": {
-      "subhead": 7,
-      "name": "INPUT SALES TAX ",
-      "codes": "00001-00007-00009",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 7,
+      "Name": "INPUT SALES TAX ",
+      "Account_Codes": "00001-00007-00009",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
 
     }
@@ -412,12 +412,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 10,
     "fields": {
-      "subhead": 8,
-      "name": "INPUT SALES TAX ON CONTRACT",
-      "codes": "00001-00008-000010",
-      "fixed": 1,
-      "left": 1,
-      "right": 0
+      "Subhead_ID": 8,
+      "Name": "INPUT SALES TAX ON CONTRACT",
+      "Account_Codes": "00001-00008-000010",
+      "Fixed_Flag": 1,
+      "Left": 1,
+      "Right": 0
 
 
     }
@@ -426,12 +426,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 11,
     "fields": {
-      "subhead": 14,
-      "name": "RENT",
-      "codes": "00003-000014-000011",
-      "fixed": 1,
-      "left":0 ,
-      "right":1
+      "Subhead_ID": 14,
+      "Name": "RENT",
+      "Account_Codes": "00003-000014-000011",
+      "Fixed_Flag": 1,
+      "Left":0 ,
+      "Right":1
 
 
     }
@@ -440,12 +440,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 12,
     "fields": {
-      "subhead": 14,
-      "name": "INTEREST",
-      "codes": "00003-000014-000012",
-      "fixed": 1,
-       "left":0 ,
-      "right":1
+      "Subhead_ID": 14,
+      "Name": "INTEREST",
+      "Account_Codes": "00003-000014-000012",
+      "Fixed_Flag": 1,
+       "Left":0 ,
+      "Right":1
 
 
     }
@@ -454,12 +454,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 13,
     "fields": {
-      "subhead": 14,
-      "name": "PROPERTY TAXES",
-      "codes": "00003-000014-000013",
-      "fixed": 1,
-       "left":0 ,
-      "right":1
+      "Subhead_ID": 14,
+      "Name": "PROPERTY TAXES",
+      "Account_Codes": "00003-000014-000013",
+      "Fixed_Flag": 1,
+       "Left":0 ,
+      "Right":1
 
 
     }
@@ -468,12 +468,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 14,
     "fields": {
-      "subhead": 16,
-      "name": "OUTPUT SALES TAX",
-      "codes": "00003-000016-000014",
-      "fixed": 1,
-       "left":0 ,
-      "right":1
+      "Subhead_ID": 16,
+      "Name": "OUTPUT SALES TAX",
+      "Account_Codes": "00003-000016-000014",
+      "Fixed_Flag": 1,
+       "Left":0 ,
+      "Right":1
 
 
     }
@@ -482,12 +482,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 15,
     "fields": {
-      "subhead": 18,
-      "name": "PROFIT/(LOSS) FOR THE YEAR",
-      "codes": "00004-000018-000015",
-      "fixed": 1,
-       "left":0 ,
-      "right":1
+      "Subhead_ID": 18,
+      "Name": "PROFIT/(LOSS) FOR THE YEAR",
+      "Account_Codes": "00004-000018-000015",
+      "Fixed_Flag": 1,
+       "Left":0 ,
+      "Right":1
 
 
     }
@@ -496,12 +496,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 16,
     "fields": {
-      "subhead": 18,
-      "name": "PROFIT/(LOSS) CARRIED FORWARD",
-      "codes": "00004-000018-000016",
-      "fixed": 1,
-       "left":0 ,
-      "right":1
+      "Subhead_ID": 18,
+      "Name": "PROFIT/(LOSS) CARRIED FORWARD",
+      "Account_Codes": "00004-000018-000016",
+      "Fixed_Flag": 1,
+       "Left":0 ,
+      "Right":1
 
 
     }
@@ -510,12 +510,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 17,
     "fields": {
-      "subhead": 19,
-      "name": "DIVEDENDS FOR THE YEAR",
-      "codes": "00004-000019-000017",
-      "fixed": 1,
-       "left":0 ,
-      "right":1
+      "Subhead_ID": 19,
+      "Name": "DIVEDENDS FOR THE YEAR",
+      "Account_Codes": "00004-000019-000017",
+      "Fixed_Flag": 1,
+       "Left":0 ,
+      "Right":1
 
 
     }
@@ -524,12 +524,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 18,
     "fields": {
-      "subhead": 22,
-      "name": "SALARIES (ADMINISTRATIVE STAFF) EXPENSE",
-      "codes": "00002-000022-000018",
-      "fixed": 1,
-       "left":1 ,
-      "right":0
+      "Subhead_ID": 22,
+      "Name": "SALARIES (ADMINISTRATIVE STAFF) EXPENSE",
+      "Account_Codes": "00002-000022-000018",
+      "Fixed_Flag": 1,
+       "Left":1 ,
+      "Right":0
 
 
     }
@@ -538,12 +538,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 19,
     "fields": {
-      "subhead": 22,
-      "name": "UTILITIES EXPENSE ",
-      "codes": "00002-000022-000019",
-      "fixed": 1,
-      "left":1 ,
-      "right":0
+      "Subhead_ID": 22,
+      "Name": "UTILITIES EXPENSE ",
+      "Account_Codes": "00002-000022-000019",
+      "Fixed_Flag": 1,
+      "Left":1 ,
+      "Right":0
 
 
     }
@@ -552,12 +552,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 20,
     "fields": {
-      "subhead": 22,
-      "name": "RENT EXPENSE",
-      "codes": "00002-000022-000020",
-      "fixed": 1,
-      "left":1 ,
-      "right":0
+      "Subhead_ID": 22,
+      "Name": "RENT EXPENSE",
+      "Account_Codes": "00002-000022-000020",
+      "Fixed_Flag": 1,
+      "Left":1 ,
+      "Right":0
 
 
     }
@@ -566,12 +566,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 21,
     "fields": {
-      "subhead": 23,
-      "name": "ADVERTISEMENT EXPENSE",
-      "codes": "00002-000023-000021",
-      "fixed": 1,
-      "left":1 ,
-      "right":0
+      "Subhead_ID": 23,
+      "Name": "ADVERTISEMENT EXPENSE",
+      "Account_Codes": "00002-000023-000021",
+      "Fixed_Flag": 1,
+      "Left":1 ,
+      "Right":0
 
 
     }
@@ -580,12 +580,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 22,
     "fields": {
-      "subhead": 23,
-      "name": "SALARIES (SALES STAFF) EXPENSE",
-      "codes": "00002-000023-000022",
-      "fixed": 1,
-      "left":1 ,
-      "right":0
+      "Subhead_ID": 23,
+      "Name": "SALARIES (SALES STAFF) EXPENSE",
+      "Account_Codes": "00002-000023-000022",
+      "Fixed_Flag": 1,
+      "Left":1 ,
+      "Right":0
 
 
     }
@@ -594,12 +594,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 23,
     "fields": {
-      "subhead": 24,
-      "name": "BANK CHARGES EXPENSE ",
-      "codes": "00002-000024-000023",
-      "fixed": 1,
-      "left":1 ,
-      "right":0
+      "Subhead_ID": 24,
+      "Name": "BANK CHARGES EXPENSE ",
+      "Account_Codes": "00002-000024-000023",
+      "Fixed_Flag": 1,
+      "Left":1 ,
+      "Right":0
 
 
     }
@@ -608,12 +608,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 24,
     "fields": {
-      "subhead": 24,
-      "name": "INTEREST EXPENSE",
-      "codes": "00002-000024-000024",
-      "fixed": 1,
-      "left":1 ,
-      "right":0
+      "Subhead_ID": 24,
+      "Name": "INTEREST EXPENSE",
+      "Account_Codes": "00002-000024-000024",
+      "Fixed_Flag": 1,
+      "Left":1 ,
+      "Right":0
 
 
     }
@@ -622,12 +622,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 25,
     "fields": {
-      "subhead": 25,
-      "name": "SERVICES REVENUE",
-      "codes": "00005-000025-000025",
-      "fixed": 1,
-      "left":0 ,
-      "right":1
+      "Subhead_ID": 25,
+      "Name": "SERVICES REVENUE",
+      "Account_Codes": "00005-000025-000025",
+      "Fixed_Flag": 1,
+      "Left":0 ,
+      "Right":1
 
 
     }
@@ -636,12 +636,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 26,
     "fields": {
-      "subhead": 25,
-      "name": "RENTAL REVENUE",
-      "codes": "00005-000026-000026",
-      "fixed": 1,
-      "left":0 ,
-      "right":1
+      "Subhead_ID": 25,
+      "Name": "RENTAL REVENUE",
+      "Account_Codes": "00005-000026-000026",
+      "Fixed_Flag": 1,
+      "Left":0 ,
+      "Right":1
 
     }
   },
@@ -649,12 +649,12 @@
     "model": "Accounts.elementaryhead",
     "pk": 27,
     "fields": {
-      "subhead": 25,
-      "name": "INTEREST REVENUE",
-      "codes": "00005-000026-000027",
-      "fixed": 1,
-      "left":0 ,
-      "right":1
+      "Subhead_ID": 25,
+      "Name": "INTEREST REVENUE",
+      "Account_Codes": "00005-000026-000027",
+      "Fixed_Flag": 1,
+      "Left":0 ,
+      "Right":1
 
     }
   }
