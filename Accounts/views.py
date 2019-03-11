@@ -2,13 +2,14 @@ from django.shortcuts import render
 from Accounts.models import heads,subheads,elementaryhead
 from Accounts.forms import *
 from django.http import JsonResponse
-from django.core import serializers
+from django.http import HttpResponse
 from django.db.models import Sum
 from Accounts.forms import *
 from django.db import connection,transaction
 from .serializers import *
 from rest_framework import generics
 import datetime
+import json
 
 
 
@@ -65,12 +66,14 @@ def addAccount(request):
 def loadsubhead(request):
     if request.method == 'POST':
         id=request.POST.get('id')
-        subhead=subheads.objects.filter(Head_ID=id)
-    data = {
-        'subheads': serializers.serialize('json', subhead)
-    }
+        subhead=subheads.objects.values().filter(Head_ID=id)
 
-    return JsonResponse(data,content_type="application/json")
+
+    subhead=json.dumps(list(subhead))
+    #data =serializers.serialize('json',subhead)
+    response=HttpResponse(subhead,content_type="application/json")
+
+    return response
 
 def saveAccounts(request):
     if request.method == 'POST':

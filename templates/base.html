@@ -51,24 +51,28 @@
     });
     $(document).ready(function () {
         $('#id_head').change(function () {
-            csrf=$('input[name="csrfmiddlewaretoken"]').val()
+            csrf=$('input[name="csrfmiddlewaretoken"]').val();
+            subheadID=this.value;
             $.ajax({
                 url:"{% url 'loadsubhead'  %}",
                 data: {
-                  'id': this.value,
+                  'id': subheadID,
                     'csrfmiddlewaretoken':csrf
                 },
                 method:'POST'
             }).done(function (data) {
-                sub=JSON.parse(data.subheads);
-                $('#id_subhead')
+                //sub=JSON.parse(data);
+                $('#id_Subhead_ID')
                     .find('option')
                     .remove();
-                sub.forEach(function (ele) {
-                    option='<option value="'+ele.pk+'">'+ele.fields.name+'</option>';
-                    $("#id_subhead").append(option);
+                data.forEach(function (ele) {
+                    option='<option value="'+ele.id+'">'+ele.Name+'</option>';
+                    subheadSelect=$("#id_Subhead_ID");
+                    subheadSelect.prepend(option);
                 });
 
+            }).fail(function (err) {
+                console.log(err.status);
             });
 
 
