@@ -55,13 +55,13 @@ class productDetails(models.Model):
 
 class products(models.Model):
     Product_Details_ID=models.ForeignKey(productDetails,on_delete=models.CASCADE)
-    Starting_Units=models.IntegerField(verbose_name='Starting Units')
-    Starting_Price=models.IntegerField(verbose_name='Starting Price',null=True)
-    Units_Received=models.IntegerField(verbose_name='Units Received')
-    Units_Shipped=models.IntegerField(verbose_name='Units Shipped')
-    Current_Units=models.IntegerField(verbose_name='Current Units')
-    Current_Price=models.IntegerField(verbose_name='Current Price')
-    Minimum_Required=models.IntegerField(verbose_name='Minimum Required')
+    Starting_Units=models.IntegerField(verbose_name='Starting Units',default=None)
+    Starting_Price=models.IntegerField(verbose_name='Starting Price',default=None)
+    Units_Received=models.IntegerField(verbose_name='Units Received',default=None)
+    Units_Shipped=models.IntegerField(verbose_name='Units Shipped',default=None)
+    Current_Units=models.IntegerField(verbose_name='Current Units',default=None)
+    Current_Price=models.IntegerField(verbose_name='Current Price',default=None)
+    Minimum_Required=models.IntegerField(verbose_name='Minimum Required',default=None)
     Date_Modified=models.DateTimeField(default=now)
 
 
@@ -69,7 +69,7 @@ class inventoryIn(models.Model):
 
     Purchase_Contract_ID=models.ForeignKey('Purchase.contracts',
                                          on_delete=models.CASCADE,verbose_name='Contract ID')
-    Units_In=models.IntegerField(verbose_name='Enter No of Bags')
+    Units_In=models.IntegerField(verbose_name='Enter No of Bags',null=True)
     MYCHOCIES = (('orginal', 'ORGINAL'), ('dummy', 'DUMMY'))
     Do_Type = models.CharField(blank=True, choices=MYCHOCIES, verbose_name='Select DO Type', max_length=20)
     Do_ID=models.IntegerField(verbose_name='Do No')
