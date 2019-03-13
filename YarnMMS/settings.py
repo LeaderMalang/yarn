@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'yarnMMsNew',
         'USER': 'root',
-        'PASSWORD':'',
+        'PASSWORD':'512060Ali@',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {

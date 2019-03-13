@@ -190,7 +190,7 @@ def trialBalance(request):
 def calTrailBalance(request):
     start=request.GET.get('start')
     end=request.GET.get('end')
-    trialBalances=accounts.objects.raw("SELECT id,Elementary_Head_ID,(SUM(Debit)-SUM(Credit)) As res FROM `Accounts_accounts` where date BETWEEN '"+start+"' and  '"+end+"' GROUP By Elementary_Head_ID")
+    trialBalances=accounts.objects.raw("SELECT id,Elementary_Head_ID_id,(SUM(Debit)-SUM(Credit)) As res FROM `Accounts_accounts` where Date_Of_Entry BETWEEN '"+start+"' and  '"+end+"' GROUP By Elementary_Head_ID_id")
     dicttrailbalances=[]
     totaldebit=0
     totalcredit=0

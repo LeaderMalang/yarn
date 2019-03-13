@@ -31,7 +31,7 @@ class elementaryhead(models.Model):
     Right=models.BooleanField(default=False,editable=False)
 
     def __str__(self):
-        return self.name
+        return self.Name
 
 class voucher(models.Model):
     Name=models.CharField(max_length=20,default=None,null=True)

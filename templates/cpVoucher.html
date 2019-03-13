@@ -37,7 +37,7 @@
 
                                     <div class="form-group">
                                       <label>Date</label>
-                                      {{ form.1.date  }}
+                                      {{ form.1.Date_Of_Entry  }}
 
 								  </div>
 
@@ -47,10 +47,10 @@
 
                                         {% for form in form %}
                                         <div class="form-row trasactionItem cpitems">
-                                            <div class="form-group col-2"><label>Account</label>{{ form.elementary }}</div>
-                                            <div class="form-group col-2"><label>Debit</label>{{ form.debit }}</div>
-                                            <div class="form-group col-2"><label>Credit</label>{{ form.credit }}</div>
-                                            <div class="form-group col-2"><label>Description</label>{{ form.description }}</div>
+                                            <div class="form-group col-2"><label>Account</label>{{ form.Elementary_Head_ID }}</div>
+                                            <div class="form-group col-2"><label>Debit</label>{{ form.Debit }}</div>
+                                            <div class="form-group col-2"><label>Credit</label>{{ form.Credit }}</div>
+                                            <div class="form-group col-2"><label>Description</label>{{ form.Description }}</div>
                                             <div class="form-group col-2"><label>Delete</label><span class="form-inline remove-form-row"> <i class="fa fa-remove"></i></span></div>
                                         </div>
                                         {% endfor %}
