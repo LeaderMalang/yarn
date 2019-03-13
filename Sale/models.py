@@ -17,8 +17,7 @@ class customers(models.Model):
     companyFax = models.IntegerField(verbose_name='Company Fax')
     elementaryID = models.ForeignKey(elementaryhead, on_delete=models.CASCADE, default=None, null=True,
                                      verbose_name='Elementary head', editable=False)
-    buyer = models.BooleanField(default=None, verbose_name='Is Buyer', editable=False)
-    supplier = models.BooleanField(default=None, verbose_name='Is Supplier', editable=False)
+
     website = models.URLField(default=None, verbose_name='Website')
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
