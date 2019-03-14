@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be44294f-1a27-4a43-aa13-e49cf82db611" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sale/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sale/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,37 +18,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Accounts/models.py">
+        <entry file="file://$PROJECT_DIR$/Sale/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="50" column="17" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="17" />
+            <state relative-caret-position="1486">
+              <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#248#334#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Inventory/models.py">
+        <entry file="file://$PROJECT_DIR$/Accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="946">
+              <caret line="189" column="19" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="19" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Purchase/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="88" column="14" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,7 +120,6 @@
         <option value="$PROJECT_DIR$/assets/js/addInventory.js" />
         <option value="$PROJECT_DIR$/YarnMMS/urls.py" />
         <option value="$PROJECT_DIR$/Inventory/views.py" />
-        <option value="$PROJECT_DIR$/Inventory/admin.py" />
         <option value="$PROJECT_DIR$/YarnMMS/assets/js/addInventory.js" />
         <option value="$PROJECT_DIR$/Accounts/forms.py" />
         <option value="$PROJECT_DIR$/data.json" />
@@ -146,10 +133,11 @@
         <option value="$PROJECT_DIR$/templates/journalVoucher.html" />
         <option value="$PROJECT_DIR$/templates/cpVoucher.html" />
         <option value="$PROJECT_DIR$/Accounts/views.py" />
-        <option value="$PROJECT_DIR$/Sale/models.py" />
         <option value="$PROJECT_DIR$/Purchase/models.py" />
         <option value="$PROJECT_DIR$/Purchase/admin.py" />
+        <option value="$PROJECT_DIR$/Inventory/admin.py" />
         <option value="$PROJECT_DIR$/Inventory/models.py" />
+        <option value="$PROJECT_DIR$/Sale/models.py" />
       </list>
     </option>
   </component>
@@ -167,22 +155,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Purchase" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,6 +166,27 @@
               <item name="YarnMMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="YarnMMS" type="462c0819:PsiDirectoryNode" />
               <item name="YarnMMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Accounts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ymms" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Sale" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -296,7 +289,8 @@
       <workItem from="1552287881966" duration="13927000" />
       <workItem from="1552365858549" duration="1274000" />
       <workItem from="1552457176884" duration="662000" />
-      <workItem from="1552470331475" duration="5130000" />
+      <workItem from="1552470331475" duration="7158000" />
+      <workItem from="1552541938661" duration="2228000" />
     </task>
     <task id="LOCAL-00001" summary="this is">
       <created>1548326682065</created>
@@ -515,11 +509,25 @@
       <option name="project" value="LOCAL" />
       <updated>1552472563451</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Completed Inventory">
+      <created>1552476516663</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1552476516663</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Completed inventory model with Views .">
+      <created>1552477389531</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1552477389531</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="330540000" />
+    <option name="totallyTimeSpent" value="334796000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -628,8 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tested and removed bugs from Suppliers,Company and company Contacts models." />
-    <MESSAGE value="Added Contracts and Contract Detail" />
     <MESSAGE value="added __str__ function at contracts and contract_details" />
     <MESSAGE value="added Customers ,Sales Contract and contract Details" />
     <MESSAGE value="Added Modification reqired at Product Details." />
@@ -653,7 +659,9 @@
     <MESSAGE value="clear accounts ajax request bug" />
     <MESSAGE value="cleared Accounts module Fully Functional" />
     <MESSAGE value="Completed Purchased Module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Purchased Module." />
+    <MESSAGE value="Completed Inventory" />
+    <MESSAGE value="Completed inventory model with Views ." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed inventory model with Views ." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -854,16 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/head.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -961,29 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="189" column="19" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sale/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#2358#3200#0" />
-            <element signature="e#3239#4400#0" />
-            <element signature="e#4447#4938#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Purchase/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1001,17 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#248#334#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Purchase/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
@@ -1022,12 +986,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="856">
+          <caret line="161" lean-forward="true" selection-start-line="161" selection-end-line="161" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#248#334#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sale/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1486">
+          <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="189" column="19" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
